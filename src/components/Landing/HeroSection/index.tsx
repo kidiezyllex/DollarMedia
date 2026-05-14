@@ -43,9 +43,11 @@ export const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col gap-4 text-left"
         >
-          <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal">
-            AI GENERATE TOOL
-          </GoldText>
+          <div className="flex justify-center w-full">
+            <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal ">
+              AI GENERATE TOOL
+            </GoldText>
+          </div>
 
           <div className="space-y-4">
             <div className="flex items-center justify-center gap-4 w-full">

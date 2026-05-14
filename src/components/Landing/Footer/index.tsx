@@ -1,7 +1,7 @@
 "use client";
 
 import { SHOP_INFO } from "@/constants";
-import { mdiChevronRight, mdiEmail, mdiMapMarker, mdiPhone } from "@mdi/js";
+import { mdiChevronRight, mdiMapMarker, mdiPhone } from "@mdi/js";
 import Icon from "@mdi/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -44,10 +44,11 @@ export const Footer = () => {
           <div>
             <h4 className="text-neutral-300 font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Liên kết nhanh</h4>
             <ul className="space-y-3 text-sm text-neutral-400">
-              <li><Link href="/" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Trang Chủ</Link></li>
-              <li><Link href="/shop" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Cửa Hàng</Link></li>
-              <li><Link href="/guide" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Hướng Dẫn Mua Hàng</Link></li>
-              <li><Link href="/commit" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Cam Kết</Link></li>
+              <li><Link href="#hero" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Trang Chủ</Link></li>
+              <li><Link href="#demo" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Demo</Link></li>
+              <li><Link href="#ai-tool" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> AI Tool</Link></li>
+              <li><Link href="#automation" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Tính năng</Link></li>
+              <li><Link href="#about" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Về chúng tôi</Link></li>
             </ul>
           </div>
 
@@ -56,17 +57,12 @@ export const Footer = () => {
             <ul className="space-y-4 text-sm text-neutral-400">
               <li className="flex items-center gap-2">
                 <Icon path={mdiMapMarker} size={0.8} className="text-secondary shrink-0 -mt-1" />
-                <span>{SHOP_INFO.address}</span>
+                <span>TOÀ HHB - CC THÁI HÀ, 43 Phạm Văn Đồng, Hà Nội</span>
               </li>
               <li className="flex items-center gap-2">
                 <Icon path={mdiPhone} size={0.8} className="text-secondary shrink-0 -mt-1" />
-                <span>{SHOP_INFO.phone}</span>
+                <span>Hotline & Zalo: 0962.274.128 hoặc 084.673.1111</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Icon path={mdiEmail} size={0.8} className="text-secondary shrink-0 -mt-1" />
-                <span>{SHOP_INFO.email}</span>
-              </li>
-
             </ul>
           </div>
         </div>
