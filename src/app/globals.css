@@ -283,3 +283,35 @@
 #nprogress .spinner {
   display: none !important;
 }
+
+@keyframes moveLeftRight {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+.animate-move-left-right {
+  animation: moveLeftRight 1.2s ease-in-out infinite;
+}
+
+@keyframes shimmerZoom {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.animate-shimmer-zoom {
+  animation: shimmerZoom 1.2s ease-in-out infinite;
+}

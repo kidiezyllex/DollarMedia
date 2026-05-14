@@ -43,7 +43,7 @@ export const DemoSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative overflow-hidden pt-8">
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="flex flex-col items-center mb-8 text-center">
@@ -125,11 +125,10 @@ export const DemoSection = () => {
         <div className="flex justify-center w-full mt-8">
           <GoldButton className="w-[250px] h-[50px] text-sm group">
             XEM TÍNH NĂNG TOOL
-            <Icon path={mdiShimmer} size={1} />
+            <Icon path={mdiShimmer} size={1} className="animate-shimmer-zoom" />
           </GoldButton>
         </div>
       </div>
-
       <Dialog open={!!selectedVideo} onOpenChange={(open) => !open && setSelectedVideo(null)}>
         <DialogContent size="large" className="p-2 bg-black/95 overflow-hidden border-none max-w-[95vw] md:max-w-[1100px] rounded-2xl">
           {selectedVideo && (

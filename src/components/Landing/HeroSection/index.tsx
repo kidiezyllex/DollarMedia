@@ -3,11 +3,11 @@
 import GoldButton from "@/components/ui/GoldButton";
 import GoldText from "@/components/ui/GoldText";
 import {
+  mdiArrowDownDropCircle,
   mdiBullseyeArrow,
   mdiCash100,
   mdiChartBoxMultiple,
-  mdiCheckCircle,
-  mdiVideoBox,
+  mdiCheckDecagram,
   mdiVideoVintage
 } from "@mdi/js";
 import Icon from "@mdi/react";
@@ -70,15 +70,15 @@ export const HeroSection = () => {
                 transition={{ delay: 0.5 + index * 0.1 }}
                 className="flex items-center gap-3 text-neutral-300 text-sm md:text-lg"
               >
-                <Icon path={mdiCheckCircle} size={1} className="text-secondary flex-shrink-0" />
+                <Icon path={mdiCheckDecagram} size={1} className="text-secondary flex-shrink-0" />
                 {benefit}
               </motion.li>
             ))}
           </ul>
           <div className="flex justify-center w-full">
-            <GoldButton className="w-[220px] h-[50px] text-sm group">
+            <GoldButton className="w-[200px] h-[50px] text-sm group">
               XEM DEMO TOOL
-              <Icon path={mdiVideoBox} size={1} />
+              <Icon path={mdiArrowDownDropCircle} size={1} className="animate-shimmer-zoom" />
             </GoldButton>
           </div>
 

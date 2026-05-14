@@ -1,11 +1,12 @@
 "use client";
 
+import GoldText from "@/components/ui/GoldText";
 import {
   mdiAccountGroupOutline,
   mdiBellOutline,
   mdiCalendarMonthOutline,
   mdiCart,
-  mdiCheckCircle,
+  mdiCheckDecagram,
   mdiChevronLeft,
   mdiChevronRight,
   mdiClockOutline,
@@ -77,9 +78,20 @@ export const AboutAndResults = () => {
   const [activeResult, setActiveResult] = useState(0);
 
   return (
-    <section className="relative py-20 px-4 bg-black overflow-hidden">
+    <section className="relative py-8 px-4 bg-black overflow-hidden">
+      <Image
+        src="/images/linefooter.png"
+        alt="line decoration"
+        width={1920}
+        height={10}
+        className="w-full h-auto "
+      />
+      <div className="flex justify-center w-full mb-8">
+        <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal !leading-normal">
+          VỀ CHÚNG TÔI
+        </GoldText>
+      </div>
       <div className="container mx-auto max-w-7xl relative z-10 space-y-24">
-
         {/* SECTION 1: ABOUT US */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left: About Text */}
@@ -89,7 +101,6 @@ export const AboutAndResults = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-semibold text-white mb-2 italic">VỀ CHÚNG TÔI</h2>
               <div className="h-1 w-20 bg-accent mb-4"></div>
               <p className="text-accent text-lg font-bold leading-tight uppercase">
                 CHÚNG TÔI XÂY DỰNG SAYMEDIA <br /> VỚI MỤC TIÊU:
@@ -112,7 +123,7 @@ export const AboutAndResults = () => {
                   className="flex items-center gap-4"
                 >
                   <div className="w-6 h-6 rounded-full border border-accent flex items-center justify-center flex-shrink-0">
-                    <Icon path={mdiCheckCircle} size={0.6} className="text-accent" />
+                    <Icon path={mdiCheckDecagram} size={0.6} className="text-accent" />
                   </div>
                   <span className="text-white font-bold text-sm tracking-wide">{item}</span>
                 </motion.div>
@@ -158,7 +169,7 @@ export const AboutAndResults = () => {
                       {team.items?.map((item, i) => (
                         <div key={i} className="flex items-center gap-2">
                           <div className={`w-4 h-4 rounded-full flex items-center justify-center ${team.color === 'blue' ? 'bg-blue-500' : 'bg-red-500'}`}>
-                            <Icon path={mdiCheckCircle} size={0.4} className="text-white" />
+                            <Icon path={mdiCheckDecagram} size={0.4} className="text-white" />
                           </div>
                           <span className="text-[9px] font-bold text-white/90">{item}</span>
                         </div>
