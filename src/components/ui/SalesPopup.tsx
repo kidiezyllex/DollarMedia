@@ -5,26 +5,26 @@ import Icon from "@mdi/react";
 import { useEffect, useState } from "react";
 
 const MOCK_SALES = [
-  { name: "Hoàng Tôn Phúc Lâm", product: "Gói Diamond - AI Generate Tool" },
-  { name: "Bùi Ngọc Quỳnh Như", product: "Hệ thống AI Automation 24/7" },
-  { name: "Đinh Công Hữu Phước", product: "Gói Pro - Tool AI Video" },
-  { name: "Trương Thảo Minh Anh", product: "Tài khoản YouTube Premium 1 năm" },
-  { name: "Lý Trần Tường Vy", product: "Gói Silver - AI Generate Tool" },
-  { name: "Ngô Đặng Hoàng Long", product: "Tài khoản ChatGPT Plus Private" },
-  { name: "Vương Nhã Uyên Thi", product: "Gói gia hạn YouTube Premium" },
-  { name: "Dương Minh Quốc Bảo", product: "Hệ thống AI Automation Hạ tầng" },
-  { name: "Phan Nguyễn Tú Uyên", product: "Gói Master AI Video" },
-  { name: "Đỗ Lê Xuân Quỳnh", product: "Gói Diamond - AI Generate Tool" },
-  { name: "Thái Việt Tiến Dũng", product: "Tài khoản Gemini Advanced" },
-  { name: "Nguyễn Đăng Hải Nam", product: "Gói Pro - Tool AI Video" },
-  { name: "Trần Phương Nhật Tiến", product: "Hệ thống AI Automation 24/7" },
-  { name: "Lê Phạm Khả Hân", product: "Gói gia hạn YouTube Premium" },
-  { name: "Hoàng Lê Gia Huy", product: "Tài khoản ChatGPT Plus Private" },
-  { name: "Phạm Đặng Gia Hân", product: "Gói Master AI Video" },
-  { name: "Nguyễn Tôn Quốc Khánh", product: "Gói Silver - AI Generate Tool" },
-  { name: "Bùi Thị Tuyết Mai", product: "Hệ thống AI Automation Hạ tầng" },
-  { name: "Vũ Nguyễn Thanh Hà", product: "Tài khoản YouTube Premium 1 năm" },
-  { name: "Trần Cảnh Thiên Bảo", product: "Gói Diamond - AI Generate Tool" }
+  { name: "Hoàng Tôn Phúc Lâm", product: "Hệ thống AI Automation (Trọn đời)" },
+  { name: "Bùi Ngọc Quỳnh Như", product: "Gói Dollar Media AI Tool - 1 Năm" },
+  { name: "Đinh Công Hữu Phước", product: "Setup Hệ thống Kênh YouTube AI" },
+  { name: "Trương Thảo Minh Anh", product: "Tài khoản YouTube Premium (Gia hạn)" },
+  { name: "Lý Trần Tường Vy", product: "Gói Tool AI Video (Vĩnh viễn)" },
+  { name: "Ngô Đặng Hoàng Long", product: "Setup Hệ thống TikTok Automation" },
+  { name: "Vương Nhã Uyên Thi", product: "Khóa học Master Content AI" },
+  { name: "Dương Minh Quốc Bảo", product: "Hệ thống AI Automation (1 Năm)" },
+  { name: "Phan Nguyễn Tú Uyên", product: "Gói Dollar Media AI Tool - Trọn đời" },
+  { name: "Đỗ Lê Xuân Quỳnh", product: "Tài khoản ChatGPT Plus (Shared)" },
+  { name: "Thái Việt Tiến Dũng", product: "Hệ thống AI Automation (Trọn đời)" },
+  { name: "Nguyễn Đăng Hải Nam", product: "Gói Dollar Media AI Tool - 6 Tháng" },
+  { name: "Trần Phương Nhật Tiến", product: "Setup Hệ thống Kênh YouTube AI" },
+  { name: "Lê Phạm Khả Hân", product: "Khóa học Master Content AI" },
+  { name: "Hoàng Lê Gia Huy", product: "Hệ thống AI Automation (1 Năm)" },
+  { name: "Phạm Đặng Gia Hân", product: "Gói Tool AI Video (Vĩnh viễn)" },
+  { name: "Nguyễn Tôn Quốc Khánh", product: "Tài khoản YouTube Premium (1 Năm)" },
+  { name: "Bùi Thị Tuyết Mai", product: "Gói Dollar Media AI Tool - 1 Năm" },
+  { name: "Vũ Nguyễn Thanh Hà", product: "Hệ thống AI Automation (Trọn đời)" },
+  { name: "Trần Cảnh Thiên Bảo", product: "Setup Hệ thống TikTok Automation" }
 ];
 
 const getRandomTime = () => {
