@@ -6,8 +6,11 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { mdiPlay, mdiShimmer } from "@mdi/js";
 import Icon from "@mdi/react";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
+
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false }) as any;
 
 const demoItems = [
   {
@@ -128,9 +131,9 @@ export const DemoSection = () => {
       </div>
 
       <Dialog open={!!selectedVideo} onOpenChange={(open) => !open && setSelectedVideo(null)}>
-        <DialogContent size="large" >
+        <DialogContent size="large" className="p-2 bg-black/95 overflow-hidden border-none max-w-[95vw] md:max-w-[1100px] rounded-2xl">
           {selectedVideo && (
-            <div className="w-full bg-darkBorderV1 h-full flex items-center justify-center rounded-xl overflow-hidden shadow-2xl">
+            <div className="w-full h-full flex items-center justify-center bg-black rounded-xl overflow-hidden shadow-2xl">
               <video
                 src={selectedVideo}
                 controls

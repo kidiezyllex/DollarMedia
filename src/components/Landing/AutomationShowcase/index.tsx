@@ -7,7 +7,8 @@ import {
   mdiPlay,
   mdiRocketLaunch,
   mdiStarFourPoints,
-  mdiStarOutline
+  mdiStarOutline,
+  mdiYoutube
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import { motion } from "framer-motion";
@@ -54,16 +55,6 @@ export const AutomationShowcase = () => {
           AI GENERATE TOOL
         </GoldText>
       </div>
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-        <Image
-          src="/images/magical-celestial-interstellar-frame.jpg"
-          alt="bg"
-          fill
-          className="object-cover"
-        />
-      </div>
-
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* TOP SECTION: AI GENERATE TOOL */}
         <div className="border-2 border-accent/30 mb-20 rounded-3xl p-6 md:p-10 bg-black/40 backdrop-blur-md relative overflow-hidden group">
@@ -111,9 +102,16 @@ export const AutomationShowcase = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="relative rounded-2xl border-2 border-accent/60 p-6 bg-gradient-to-br from-[#1a1308] to-black shadow-[0_0_50px_rgba(203,155,81,0.15)] overflow-hidden"
+                className="relative"
               >
-                {/* // image hear */}
+                <Image
+                  src="/images/day-khong-chi-la-tool-tao-video.jpg"
+                  alt="Đây không chỉ là tool tạo video"
+                  width={1000}
+                  height={600}
+                  draggable={false}
+                  className="w-full h-auto object-cover"
+                />
               </motion.div>
             </div>
           </div>
@@ -124,7 +122,7 @@ export const AutomationShowcase = () => {
           </GoldText>
         </div>
         {/* MIDDLE SECTION: CURRENT STATE */}
-        <div className="border-2 border-accent/30 rounded-3xl p-6 md:p-8 bg-black/40 backdrop-blur-md relative">
+        <div className="border-2 border-accent/30 rounded-3xl p-6 md:p-8 bg-black/40 backdrop-blur-md relative mb-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {statusSections.map((section, idx) => (
               <motion.div
@@ -133,8 +131,14 @@ export const AutomationShowcase = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="border-2 border-accent/30 rounded-2xl p-6 bg-gradient-to-b from-[#111] to-black hover:border-accent transition-all duration-500 group relative cursor-pointer"
+                className="border-2 border-accent/30 rounded-2xl p-4 hover:border-accent transition-all duration-500 group relative cursor-pointer overflow-hidden"
               >
+                <Image
+                  src="/images/magical-celestial-interstellar-frame.jpg"
+                  alt="background"
+                  fill
+                  className="object-cover opacity-20 -z-10 group-hover:opacity-20 transition-all duration-700 scale-125 group-hover:scale-[1.4]"
+                />
                 <div className="flex items-center gap-3 mb-4">
                   <Icon path={mdiRocketLaunch} size={0.8} className="text-secondary" />
                   <h3 className="text-accent font-semibold text-base uppercase group-hover:text-accent transition-colors">
@@ -164,23 +168,17 @@ export const AutomationShowcase = () => {
             <Icon path={mdiStarOutline} size={1} className="text-accent hidden md:block" />
           </div>
         </div>
+        <div className="flex justify-center w-full mb-8">
+          <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal">
+            CHI TIẾT VỀ TÍNH NĂNG TOOL
+          </GoldText>
+        </div>
 
         {/* BOTTOM SECTION: VIDEO DEMO */}
         <div className="border-2 border-accent/30 rounded-3xl p-6 md:p-8 bg-black/40 backdrop-blur-md relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-
             {/* Left: Video Placeholder */}
             <div className="space-y-4">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center border border-accent/30 shadow-[0_0_15px_rgba(203,155,81,0.2)]">
-                  <Icon path={mdiRocketLaunch} size={1} className="text-accent" />
-                </div>
-                <div>
-                  <GoldText className="text-2xl font-semibold uppercase">AI GENERATE TOOL</GoldText>
-                  <p className="text-accent text-[10px] font-semibold uppercase">VIDEO CHIA SẺ TÍNH NĂNG TOOL</p>
-                </div>
-              </div>
-
               <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-accent/30 shadow-2xl group cursor-pointer bg-neutral-900">
                 <Image
                   src="/images/demo-3.png"
@@ -194,9 +192,12 @@ export const AutomationShowcase = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-center text-accent font-semibold text-xs uppercase">
-                -- HÃY DÀNH RA 8 PHÚT ĐỂ HIỂU CHI TIẾT VỀ TOOL NHA --
-              </p>
+              <div className="mt-8 p-4 rounded-xl border border-dashed border-accent/50 bg-gradient-to-r from-accent/5 via-accent/10 to-accent/5 flex items-center justify-between gap-4">
+                <Icon path={mdiYoutube} size={1} className="text-accent hidden md:block" />
+                <p className="text-accent text-sm font-semibold text-center uppercase">
+                  VIDEO CHIA SẺ TÍNH NĂNG TOOL - HÃY DÀNH RA 8 PHÚT ĐỂ HIỂU CHI TIẾT VỀ TOOL NHA
+                </p>
+              </div>
             </div>
 
             {/* Right: Feature List */}
