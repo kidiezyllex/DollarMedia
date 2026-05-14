@@ -1,5 +1,5 @@
 export const SHOP_INFO = {
-  name: "MD Premium",
+  name: "Dollar Media",
   address: "Vin smart city Hà Nội",
   phone: "0846731111",
   email: "nguyenphduy10@gmail.com",

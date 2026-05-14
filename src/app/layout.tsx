@@ -11,13 +11,13 @@ const lexend = Lexend({
 
 export const metadata: Metadata = {
   title: {
-    default: 'MD Premium - Giải Pháp & Tài Nguyên AI Chuyên Nghiệp',
-    template: '%s | MD Premium'
+    default: 'Dollar Media - Giải Pháp & Tài Nguyên AI Chuyên Nghiệp',
+    template: '%s | Dollar Media'
   },
-  description: 'MD Premium chuyên cung cấp tài nguyên AI hàng đầu: Tài khoản ChatGPT Plus, Gemini Advanced, Key Windows 11/10 Pro, Office 365 bản quyền, VPN giá rẻ (NordVPN, ExpressVPN). Uy tín, bảo hành 1 đổi 1, hỗ trợ 24/7.',
+  description: 'Dollar Media chuyên cung cấp tài nguyên AI hàng đầu: Tài khoản ChatGPT Plus, Gemini Advanced, Key Windows 11/10 Pro, Office 365 bản quyền, VPN giá rẻ (NordVPN, ExpressVPN). Uy tín, bảo hành 1 đổi 1, hỗ trợ 24/7.',
   keywords: [
     // Thương hiệu & chung
-    'MD Premium', 'mdpremium.com.vn', 'mdpremium.com.vn', 'tài khoản premium giá rẻ', 'mua tài khoản giá rẻ',
+    'Dollar Media', 'mdpremium.com.vn', 'mdpremium.com.vn', 'tài khoản premium giá rẻ', 'mua tài khoản giá rẻ',
     'bán key bản quyền', 'phần mềm giá rẻ', 'shop tài khoản uy tín', 'bảo hành 1 đổi 1', 'tài khoản vip',
 
     // Trí tuệ nhân tạo (AI)
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     'VPN giá rẻ', 'Tài khoản NordVPN', 'Mua ExpressVPN', 'Tài khoản Surfshark VPN',
     'Tài khoản CyberGhost', 'HMA VPN', 'Key Kaspersky Internet Security', 'Phần mềm diệt virus bản quyền'
   ],
-  authors: [{ name: 'MD Premium', url: 'https://mdpremium.com.vn' }],
-  creator: 'MD Premium',
-  publisher: 'MD Premium',
+  authors: [{ name: 'Dollar Media', url: 'https://mdpremium.com.vn' }],
+  creator: 'Dollar Media',
+  publisher: 'Dollar Media',
   formatDetection: {
     email: false,
     address: false,
@@ -58,16 +58,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'MD Premium - Giải Pháp & Tài Nguyên AI Chuyên Nghiệp',
+    title: 'Dollar Media - Giải Pháp & Tài Nguyên AI Chuyên Nghiệp',
     description: 'Nâng tầm công việc với tài khoản ChatGPT Plus, Gemini Advanced, phần mềm bản quyền Windows/Office, và dịch vụ giải trí Premium giá tốt nhất thị trường.',
     url: 'https://mdpremium.com.vn',
-    siteName: 'MD Premium',
+    siteName: 'Dollar Media',
     images: [
       {
         url: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1777280469/background_ohy2um.png',
         width: 1200,
         height: 630,
-        alt: 'MD Premium - Cung cấp tài nguyên công nghệ',
+        alt: 'Dollar Media - Cung cấp tài nguyên công nghệ',
       },
     ],
     locale: 'vi_VN',
@@ -75,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MD Premium - Tài Nguyên AI & Phần Mềm Bản Quyền',
-    description: 'Khám phá ngay các dịch vụ AI, VPN, bản quyền Windows, Office và tài khoản giải trí Premium ưu đãi nhất tại MD Premium.',
+    title: 'Dollar Media - Tài Nguyên AI & Phần Mềm Bản Quyền',
+    description: 'Khám phá ngay các dịch vụ AI, VPN, bản quyền Windows, Office và tài khoản giải trí Premium ưu đãi nhất tại Dollar Media.',
     images: ['https://res.cloudinary.com/drqbhj6ft/image/upload/v1777280469/background_ohy2um.png'],
   },
   robots: {
@@ -104,7 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'MD Premium',
+    name: 'Dollar Media',
     url: 'https://mdpremium.com.vn',
     logo: 'https://mdpremium.com.vn/logo.png', // Thay thế bằng logo thực tế
     contactPoint: {

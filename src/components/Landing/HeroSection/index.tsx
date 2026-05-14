@@ -23,7 +23,7 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
       {/* Background Image with Opacity */}
       <div className="absolute top-0 left-0 w-full h-[100vh] z-0 opacity-80">
         <Image

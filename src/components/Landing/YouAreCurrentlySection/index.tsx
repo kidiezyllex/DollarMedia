@@ -37,14 +37,7 @@ const statusSections = [
 ];
 export const YouAreCurrentlySection = () => {
     return (
-        <section className="relative overflow-hidden max-w-7xl mx-auto">
-            <Image
-                src="/images/linefooter.png"
-                alt="line decoration"
-                width={1920}
-                height={10}
-                className="w-full h-auto "
-            />
+        <section id="current-status" className="relative overflow-hidden container mx-auto">
             <div className="flex justify-center w-full mb-8">
                 <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal">
                     HIỆN TẠI BẠN ĐANG
@@ -52,6 +45,7 @@ export const YouAreCurrentlySection = () => {
             </div>
             {/* MIDDLE SECTION: CURRENT STATE */}
             <div className="border-2 border-accent/30 rounded-3xl p-6 bg-black/40 backdrop-blur-md relative mb-8">
+                <div className="grid-bg"></div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {statusSections.map((section, idx) => (
                         <motion.div
@@ -60,7 +54,7 @@ export const YouAreCurrentlySection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="border-2 border-accent/30 rounded-2xl p-4 hover:border-accent transition-all duration-500 group relative cursor-pointer overflow-hidden"
+                            className="border-2 border-accent/30 rounded-2xl p-4 hover:border-accent transition-all duration-500 group relative cursor-pointer overflow-hidden bg-black"
                         >
                             <Image
                                 src="/images/magical-celestial-interstellar-frame.jpg"

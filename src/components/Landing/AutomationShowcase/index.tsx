@@ -10,43 +10,15 @@ import {
 } from "@mdi/js";
 import Icon from "@mdi/react";
 import Image from "next/image";
-
-const statusSections = [
-  {
-    title: "MỚI BẮT ĐẦU",
-    items: [
-      "Chưa có kiến thức nền tảng",
-      "Không biết bắt đầu từ đâu",
-      "Không biết edit / làm nội dung",
-      "Sợ làm nên không dám làm",
-      "Muốn làm nhưng sợ không ra kết quả"
-    ]
-  },
-  {
-    title: "ĐÃ LÀM NHƯNG CHƯA RA KẾT QUẢ",
-    items: [
-      "Đăng video nhưng không có view",
-      "Nội dung không ai xem hết",
-      "Không biết sai ở đâu để sửa",
-      "Làm một thời gian rồi nản",
-      "Không biết cách làm bài bản"
-    ]
-  },
-  {
-    title: "NGƯỜI ĐÃ LÀM CÓ KẾT QUẢ NHƯNG CHƯA SCALE",
-    items: [
-      "Làm video thủ công, rất mất thời gian",
-      "Không thể đăng đều mỗi ngày",
-      "Không scale được nhiều kênh",
-      "Phụ thuộc vào edit / content / nhân sự",
-      "Có kết quả nhưng không tăng trưởng"
-    ]
-  }
-];
-
 export const AutomationShowcase = () => {
   return (
-    <section className="relative max-w-7xl mx-auto overflow-hidden">
+    <section id="automation" className="relative container mx-auto overflow-hidden py-12">
+      <Image
+        src="/images/black-and-gold-luxury-background.jpg"
+        alt="background"
+        fill
+        className="object-cover w-full opacity-20 -z-10"
+      />
       <div className="flex justify-center w-full mb-8">
         <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal">
           CHI TIẾT VỀ TÍNH NĂNG TOOL
@@ -54,7 +26,7 @@ export const AutomationShowcase = () => {
       </div>
 
       {/* BOTTOM SECTION: VIDEO DEMO */}
-      <div className="border-2 border-accent/30 rounded-3xl p-6 bg-black/40 backdrop-blur-md relative overflow-hidden">
+      <div className="border-2 border-accent/30 rounded-3xl p-6 relative overflow-hidden container mx-auto ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
           {/* Left: Video Placeholder */}
           <div className="space-y-4">

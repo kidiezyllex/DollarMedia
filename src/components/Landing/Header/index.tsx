@@ -40,16 +40,17 @@ export const Header = () => {
 
   return (
     <>
-      <header className={`fixed top-0 sm:top-9 w-full z-50 transition-all duration-300 bg-transparent`}>
+      <header className={`absolute top-0 sm:top-9 w-full z-50 transition-all duration-300 bg-transparent`}>
         <div className="mx-auto px-4 sm:px-6 md:px-8">
           <div className="flex justify-between items-center py-2 sm:py-2 md:py-3 lg:py-3 xl:py-4">
             <nav className=" hidden lg:flex border border-primary/50 px-4 rounded-full backdrop-blur-sm ml-6 uppercase text-[10px] md:text-xs lg:text-sm xl:text-sm">
               <Dropdown>
                 <TriggerWrapper>
-                  <Trigger href="/">Trang chủ</Trigger>
-                  <Trigger href="/shop">Cửa hàng</Trigger>
-                  <Trigger href="/guide">Hướng dẫn mua hàng</Trigger>
-                  <Trigger href="/commit">Cam kết</Trigger>
+                  <Trigger href="#hero">Trang chủ</Trigger>
+                  <Trigger href="#demo">Demo</Trigger>
+                  <Trigger href="#ai-tool">AI Tool</Trigger>
+                  <Trigger href="#automation">Tính năng</Trigger>
+                  <Trigger href="#about">Về chúng tôi</Trigger>
                 </TriggerWrapper>
               </Dropdown>
             </nav>
@@ -64,18 +65,11 @@ export const Header = () => {
                 <DrawerContent className="bg-[#050505] border-primary/20">
                   <div className="px-4 py-8 space-y-8 flex flex-col h-full">
                     <div className="flex flex-col gap-4 font-medium">
-                      <Link href="/" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Trang Chủ</Link>
-                      <Link href="/shop" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Cửa Hàng</Link>
-
-                      <div className="space-y-4">
-                        <p className="text-neutral-300 hover:text-secondary text-sm transition-colors">Danh mục nổi bật</p>
-                        <div className="grid grid-cols-2 gap-3">
-                          <Link href="/shop" className="text-sm text-secondary font-semibold">Xem tất cả →</Link>
-                        </div>
-                      </div>
-
-                      <Link href="/guide" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Hướng Dẫn Mua Hàng</Link>
-                      <Link href="/commit" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Cam Kết</Link>
+                      <Link href="#hero" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Trang Chủ</Link>
+                      <Link href="#demo" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Demo</Link>
+                      <Link href="#ai-tool" className="text-neutral-300 hover:text-secondary text-sm transition-colors">AI Tool</Link>
+                      <Link href="#automation" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Tính năng</Link>
+                      <Link href="#about" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Về chúng tôi</Link>
                     </div>
 
                     <div className="flex flex-col gap-4">

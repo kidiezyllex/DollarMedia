@@ -1,7 +1,7 @@
 "use client";
 
 import { SHOP_INFO } from "@/constants";
-import { mdiAccountGroup, mdiChevronRight, mdiEmail, mdiMapMarker, mdiPhone } from "@mdi/js";
+import { mdiChevronRight, mdiEmail, mdiMapMarker, mdiPhone } from "@mdi/js";
 import Icon from "@mdi/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -30,25 +30,15 @@ export const Footer = () => {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-4 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img draggable={false} src="/images/primary-logo.png" alt={SHOP_INFO.name} className="h-16 w-auto object-contain" />
+              <img draggable={false} src="/images/primary-logo.png" alt={SHOP_INFO.name} className="h-20 w-20 p-1 object-contain" />
             </div>
             <p className="text-neutral-400 text-sm max-w-sm mb-4">
               Trung tâm cung cấp tài nguyên số và AI hàng đầu. Kết nối tương lai ngay hôm nay.
             </p>
-            <ul className=" flex items-center gap-4 text-sm text-neutral-400">
-              <li className="flex items-center gap-2">
-                <Icon path={mdiAccountGroup} size={0.8} className="text-secondary hover:underline transition-colors shrink-0 -mt-1" />
-                <a href={SHOP_INFO.zalo1} target="_blank" rel="noreferrer" className="text-secondary hover:underline transition-colors">Tham gia cộng đồng Zalo 1</a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Icon path={mdiAccountGroup} size={0.8} className="text-secondary hover:underline transition-colors shrink-0 -mt-1" />
-                <a href={SHOP_INFO.zalo2} target="_blank" rel="noreferrer" className="text-secondary hover:underline transition-colors">Tham gia cộng đồng Zalo 2</a>
-              </li>
-            </ul>
           </div>
 
           <div>

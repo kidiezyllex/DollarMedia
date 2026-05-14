@@ -19,7 +19,7 @@ export const WorkflowProcess = () => {
       <div className="max-w-8xl mx-auto px-4 sm:px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight mb-4 text-white">Quy trình <span className="text-secondary">Giao dịch</span></h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">Các bước đơn giản để sở hữu tài nguyên AI đỉnh cao tại MD Premium.</p>
+          <p className="text-neutral-400 max-w-2xl mx-auto">Các bước đơn giản để sở hữu tài nguyên AI đỉnh cao tại Dollar Media.</p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 relative">

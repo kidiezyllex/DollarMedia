@@ -3,7 +3,6 @@
 import GoldText from "@/components/ui/GoldText";
 import {
   mdiCalendarMonthOutline,
-  mdiCart,
   mdiCheckDecagram,
   mdiChevronLeft,
   mdiChevronRight,
@@ -86,7 +85,7 @@ export const AboutAndResults = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
   return (
-    <section className="relative py-8 px-4 bg-black overflow-hidden">
+    <section id="about" className="relative w-full bg-[#010205] overflow-hidden mb-8">
       <Image
         src="/images/linefooter.png"
         alt="line decoration"
@@ -99,9 +98,9 @@ export const AboutAndResults = () => {
           VỀ CHÚNG TÔI
         </GoldText>
       </div>
-      <div className="container mx-auto max-w-7xl relative z-10">
+      <div className="relative z-10">
         {/* SECTION 1: ABOUT US */}
-        <div className="flex items-start gap-6 border-2 border-accent/30 mb-8 rounded-3xl p-6 bg-black/40 backdrop-blur-md relative overflow-hidden group">
+        <div className="flex items-start gap-6 border-2 border-accent/30 rounded-3xl p-6 mx-auto container relative overflow-hidden group">
           {/* Left Info */}
           <div className="space-y-4 w-[40%] ">
             {/* About us Image here */}
@@ -225,9 +224,13 @@ export const AboutAndResults = () => {
             </div>
           </div>
         </div>
-
-        {/* SECTION 2: GÓI SỬ DỤNG */}
-        <div>
+        <div className="relative">
+          <Image
+            src="/images/black-and-gold-luxury-background2.jpg"
+            alt="background"
+            fill
+            className="object-fill w-full opacity-20 -z-10"
+          />
           <Image
             src="/images/linefooter.png"
             alt="line decoration"
@@ -241,7 +244,7 @@ export const AboutAndResults = () => {
             </GoldText>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-4 mx-auto container ">
             {[1, 2, 3].map((num) => (
               <motion.div
                 key={num}
@@ -275,7 +278,7 @@ export const AboutAndResults = () => {
         </div>
 
         {/* SECTION 3: CTA */}
-        <div className="pt-12 border-t border-accent/20">
+        {/* <div className="pt-12 border-t border-accent/20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-4">
               <motion.h2
@@ -304,8 +307,7 @@ export const AboutAndResults = () => {
               </button>
             </div>
           </div>
-        </div>
-
+        </div> */}
       </div>
     </section>
   );
