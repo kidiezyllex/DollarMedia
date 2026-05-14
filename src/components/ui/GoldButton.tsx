@@ -21,7 +21,7 @@ const GoldButton: React.FC<GoldButtonProps> = ({
         "bg-[length:200%_200%] shadow-[5px_5px_10px_rgba(0,0,0,0.144)]",
         "text-[0.8em] font-semibold text-amber-950",
         "cursor-pointer transition-all duration-[3000ms] ease-in-out",
-        "hover:scale-95 hover:bg-right hover:animate-gradient",
+        "hover:scale-95 hover:bg-right animate-gradient",
         className
       )}
       {...props}

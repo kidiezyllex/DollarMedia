@@ -1,16 +1,20 @@
 "use client";
 
 import { AboutAndResults } from "@/components/Landing/AboutAndResults";
+import { AIGenerateToolSection } from "@/components/Landing/AIGenerateToolSection";
 import { AutomationShowcase } from "@/components/Landing/AutomationShowcase";
-import { DemoSection } from "@/components/Landing/DemoSection";
 import { HeroSection } from "@/components/Landing/HeroSection";
+import { RealDemoSection } from "@/components/Landing/RealDemoSection";
+import { YouAreCurrentlySection } from "@/components/Landing/YouAreCurrentlySection";
 
 export default function LandingPage() {
   return (
     <>
       <main className="relative z-10">
         <HeroSection />
-        <DemoSection />
+        <RealDemoSection />
+        <YouAreCurrentlySection />
+        <AIGenerateToolSection />
         <AutomationShowcase />
         <AboutAndResults />
       </main>

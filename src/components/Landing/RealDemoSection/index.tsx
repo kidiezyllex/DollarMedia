@@ -39,7 +39,7 @@ const demoItems = [
   },
 ];
 
-export const DemoSection = () => {
+export const RealDemoSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
