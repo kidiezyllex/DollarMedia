@@ -4,7 +4,7 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'edge'
 
 // Image metadata
-export const alt = 'FurycoreLogo'
+export const alt = 'Dollar MediaLogo'
 export const size = {
     width: 180,
     height: 180,

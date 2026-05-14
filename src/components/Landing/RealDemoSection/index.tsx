@@ -82,7 +82,7 @@ export const RealDemoSection = () => {
                 src="/images/magical-celestial-interstellar-frame.jpg"
                 alt="background"
                 fill
-                className="object-cover opacity-10 -z-10"
+                className="object-cover opacity-20 -z-10 scale-125"
               />
               <div className="flex flex-col items-center gap-4 p-4 w-full">
                 {/* Video Thumbnail */}
