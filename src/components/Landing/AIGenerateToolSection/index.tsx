@@ -70,21 +70,9 @@ export const AIGenerateToolSection = () => {
                                 </motion.div>
                             </div>
                         </div>
-                        <p className="text-secondary text-lg font-semibold mb-4">
-                            Chi phí sử dụng tool:
-                        </p>
-                        <Image
-                            src="/images/chi-phi-su-dung-tool.jpg"
-                            alt="pricing"
-                            width={1920}
-                            height={10}
-                            className="w-full h-auto rounded-2xl overflow-hidden"
-                        />
                     </div>
-
                 </PremiumCard>
             </div>
-
         </section>
     );
 };

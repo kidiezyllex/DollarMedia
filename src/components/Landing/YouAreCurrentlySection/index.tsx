@@ -8,11 +8,11 @@ const statusSections = [
     {
         title: "MỚI BẮT ĐẦU",
         items: [
-            "Chưa có kiến thức nền tảng",
-            "Không biết bắt đầu từ đâu",
-            "Không biết edit / làm nội dung",
-            "Sợ làm nên không dám làm",
-            "Muốn làm nhưng sợ không ra kết quả"
+            "Chưa biết bắt đầu từ đâu",
+            "Sợ làm sai nên chưa dám bắt đầu",
+            "Sợ mua tool về nhưng không biết dùng",
+            "Muốn làm nhưng sợ không ra kết quả",
+            "Không có kiến thức nền tảng"
         ]
     },
     {
