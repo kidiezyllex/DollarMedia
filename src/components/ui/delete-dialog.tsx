@@ -75,10 +75,10 @@ export const DeleteDialog = ({
             variant="outline"
             onClick={onClose}
             disabled={isDeleting}
-            className="flex-1 bg-transparent border-neutral-400/50 text-neutral-300 hover:bg-darkBorderV1"
+            className="flex-1 bg-transparent border-neutral-400/50 text-neutral-200 hover:bg-darkBorderV1"
           >
             <Icon path={mdiClose} size={0.8} />
-            <span className="text-neutral-300">Hủy</span>
+            <span className="text-neutral-200">Hủy</span>
           </Button>
           <Button
             variant="destructive"

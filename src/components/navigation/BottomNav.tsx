@@ -3,11 +3,11 @@
 import { Icon } from "@/components/ui/mdi-icon";
 import { cn } from "@/lib/utils";
 import {
-    mdiAccountOutline,
-    mdiBellOutline,
-    mdiCalendarMonthOutline,
-    mdiHomeOutline,
-    mdiMapMarkerOutline,
+  mdiAccountOutline,
+  mdiBellOutline,
+  mdiCalendarMonthOutline,
+  mdiHomeOutline,
+  mdiMapMarkerOutline,
 } from "@mdi/js";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -38,7 +38,7 @@ export const BottomNav = () => {
               )}
             >
               {isActive && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-accent rounded-b-full shadow-[0_0_10px_2px_rgba(65,198,81,0.5)]"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-1 bg-secondary rounded-b-full shadow-[0_0_10px_2px_rgba(65,198,81,0.5)]"></div>
               )}
               <Icon
                 path={item.icon}

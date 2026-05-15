@@ -1,7 +1,7 @@
+import { mdiCalendar, mdiClockOutline } from "@mdi/js";
+import Icon from "@mdi/react";
 import { format } from "date-fns";
 import { vi as viLocale } from "date-fns/locale";
-import Icon from "@mdi/react";
-import { mdiCalendar, mdiClockOutline } from "@mdi/js";
 import * as React from "react";
 import { vi } from "react-day-picker/locale/vi";
 
@@ -98,13 +98,13 @@ export function DatePicker({
         <Button
           className={cn(
             "w-full justify-start h-10 text-left font-normal border border-darkBorderV1 bg-darkBorderV1/50 hover:bg-darkCardV1 hover:border-accent/30 transition-all",
-            !date && "text-neutral-300",
-            date && "text-neutral-300",
+            !date && "text-neutral-200",
+            date && "text-neutral-200",
             className
           )}
           disabled={disabled}
         >
-          <Icon path={mdiCalendar} size={0.8} className="text-neutral-300 mr-2" />
+          <Icon path={mdiCalendar} size={0.8} className="text-neutral-200 mr-2" />
           <span>{formatDisplay()}</span>
         </Button>
       </PopoverTrigger>
@@ -124,7 +124,7 @@ export function DatePicker({
             <div className="border-l border-darkBorderV1 bg-darkBackgroundV1 p-3 flex flex-col justify-start min-w-[160px]">
               <div className="space-y-2">
                 <Label htmlFor="time-input" className="flex flex-row items-center gap-2 normal-case">
-                  <Icon path={mdiClockOutline} size={0.6} className="text-neutral-300" />
+                  <Icon path={mdiClockOutline} size={0.6} className="text-neutral-200" />
                   Nhập khung giờ
                 </Label>
                 <Input
@@ -132,7 +132,7 @@ export function DatePicker({
                   type="time"
                   value={timeValue}
                   onChange={handleTimeChange}
-                  className="h-10 bg-darkCardV1 border-darkBorderV1 text-neutral-300 focus:border-accent/50 appearance-none [&::-webkit-calendar-picker-indicator]:invert [&::-webkit-calendar-picker-indicator]:cursor-pointer"
+                  className="h-10 bg-darkCardV1 border-darkBorderV1 text-neutral-200 focus:border-accent/50 appearance-none [&::-webkit-calendar-picker-indicator]:invert [&::-webkit-calendar-picker-indicator]:cursor-pointer"
                 />
               </div>
             </div>

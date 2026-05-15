@@ -1,5 +1,5 @@
-import * as React from "react";
 import { cn } from "@/lib/utils";
+import * as React from "react";
 
 export interface PaginationProps extends React.HTMLAttributes<HTMLDivElement> {
   page: number;
@@ -103,7 +103,7 @@ export function Pagination({
       <ul className="inline-flex items-center -space-x-px">
         <li>
           <button
-            className="px-3 text-sm h-10 min-w-10 flex items-center justify-center ml-0 leading-tight text-neutral-300 bg-darkBorderV1 border border-darkBackgroundV1 rounded-l-lg hover:bg-gray-700"
+            className="px-3 text-sm h-10 min-w-10 flex items-center justify-center ml-0 leading-tight text-neutral-200 bg-darkBorderV1 border border-darkBackgroundV1 rounded-l-lg hover:bg-gray-700"
             onClick={() => onPageChange(page - 1)}
             disabled={page === 1}
           >
@@ -113,7 +113,7 @@ export function Pagination({
         {getPages().map((p, index) => (
           <li key={typeof p === "number" ? p : `ellipsis-${index}`}>
             {p === "..." ? (
-              <span className="px-3 text-sm h-10 min-w-10 flex items-center justify-center leading-tight text-neutral-300 bg-darkBorderV1 border border-darkBackgroundV1">
+              <span className="px-3 text-sm h-10 min-w-10 flex items-center justify-center leading-tight text-neutral-200 bg-darkBorderV1 border border-darkBackgroundV1">
                 ...
               </span>
             ) : (
@@ -121,8 +121,8 @@ export function Pagination({
                 className={cn(
                   "px-3 text-sm h-10 min-w-10 flex items-center justify-center leading-tight border border-darkBackgroundV1",
                   p === page
-                    ? "bg-mainTextHoverV1 text-neutral-300"
-                    : "bg-darkBorderV1 text-neutral-300 hover:bg-gray-700"
+                    ? "bg-mainTextHoverV1 text-neutral-200"
+                    : "bg-darkBorderV1 text-neutral-200 hover:bg-gray-700"
                 )}
                 onClick={() => onPageChange(p as number)}
                 aria-current={p === page ? "page" : undefined}
@@ -134,7 +134,7 @@ export function Pagination({
         ))}
         <li>
           <button
-            className="px-3 text-sm h-10 min-w-10 flex items-center justify-center leading-tight text-neutral-300 bg-darkBorderV1 border border-darkBackgroundV1 rounded-r-lg hover:bg-gray-700"
+            className="px-3 text-sm h-10 min-w-10 flex items-center justify-center leading-tight text-neutral-200 bg-darkBorderV1 border border-darkBackgroundV1 rounded-r-lg hover:bg-gray-700"
             onClick={() => onPageChange(page + 1)}
             disabled={page === totalPages}
           >

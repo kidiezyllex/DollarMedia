@@ -42,7 +42,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-neutral-300 font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Liên kết nhanh</h4>
+            <h4 className="text-neutral-200 font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Liên kết nhanh</h4>
             <ul className="space-y-3 text-sm text-neutral-400">
               <li><Link href="#hero" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Trang Chủ</Link></li>
               <li><Link href="#demo" className="hover:text-secondary hover:underline transition-colors inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Demo</Link></li>
@@ -53,7 +53,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-neutral-300 font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Thông tin liên hệ</h4>
+            <h4 className="text-neutral-200 font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Thông tin liên hệ</h4>
             <ul className="space-y-4 text-sm text-neutral-400">
               <li className="flex items-center gap-2">
                 <Icon path={mdiMapMarker} size={0.8} className="text-secondary shrink-0 -mt-1" />

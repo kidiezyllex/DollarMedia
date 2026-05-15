@@ -35,7 +35,7 @@ export function FileRecordCard({
                 />
             </div>
             <div className="flex-1 min-w-0 pr-2 space-y-1">
-                <p className="text-sm font-semibold text-neutral-300 truncate" title={fileName}>
+                <p className="text-sm font-semibold text-neutral-200 truncate" title={fileName}>
                     {fileName}
                 </p>
                 <p className="text-sm text-neutral-400 uppercase">

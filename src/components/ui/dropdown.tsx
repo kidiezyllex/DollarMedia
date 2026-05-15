@@ -82,7 +82,7 @@ export const TriggerWrapper: React.FC<{ children: React.ReactNode }> = ({ childr
                                 ? "text-secondary"
                                 : isHovered && e.props.hasSubNav
                                     ? "text-secondary"
-                                    : "text-neutral-300 hover:text-secondary"
+                                    : "text-neutral-200 hover:text-secondary"
                         )}>
                         {e}
                     </button>

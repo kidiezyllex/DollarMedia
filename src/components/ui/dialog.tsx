@@ -67,7 +67,7 @@ const DialogContent = React.forwardRef<
     >
       <div className="flex flex-col w-full h-fit">{children}</div>
       <DialogPrimitive.Close className="absolute md:right-4 md:top-3 right-3 top-2 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-darkCardV1 data-[state=open]:text-gray-500 bg-darkBackgroundV1 border border-darkBorderV1 rounded-full p-1">
-        <Icon path={mdiClose} size={0.8} className="text-neutral-300" />
+        <Icon path={mdiClose} size={0.8} className="text-neutral-200" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
@@ -81,7 +81,7 @@ const DialogHeader = ({
 }: React.HTMLAttributes<HTMLDivElement>) => (
   <div
     className={cn(
-      "flex flex-col space-y-1 text-left text-neutral-300 border-b-darkBorderV1 border-b p-3 md:p-4 !h-fit w-full bg-darkBorderV1",
+      "flex flex-col space-y-1 text-left text-neutral-200 border-b-darkBorderV1 border-b p-3 md:p-4 !h-fit w-full bg-darkBorderV1",
       className
     )}
     {...props}
@@ -110,7 +110,7 @@ const DialogTitle = React.forwardRef<
   <DialogPrimitive.Title
     ref={ref}
     className={cn(
-      "text-base flex items-center gap-2 font-semibold leading-none tracking-tight text-neutral-300",
+      "text-base flex items-center gap-2 font-semibold leading-none tracking-tight text-neutral-200",
       className
     )}
     {...props}

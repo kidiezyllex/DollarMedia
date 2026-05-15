@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SHOP_INFO } from "@/constants";
 
@@ -9,13 +8,13 @@ export const FAQSection = () => {
     <section id="faq" className="py-16 relative">
       <div className="max-w-3xl mx-auto px-4 sm:px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight mb-4 text-neutral-300">Câu hỏi <span className="text-secondary">Thường gặp</span></h2>
+          <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight mb-4 text-neutral-200">Câu hỏi <span className="text-secondary">Thường gặp</span></h2>
           <p className="text-neutral-400 max-w-2xl mx-auto">Giải đáp các thắc mắc phổ biến của người dùng về dịch vụ và chế độ bảo hành.</p>
         </div>
 
         <Accordion className="w-full space-y-4">
           <AccordionItem value="item-1" className="border-none cyber-border clip-corner bg-[#0a0a0a] px-4 rounded-none">
-            <AccordionTrigger className="text-neutral-300 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
+            <AccordionTrigger className="text-neutral-200 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
               Bảo hành sản phẩm như thế nào?
             </AccordionTrigger>
             <AccordionContent className="text-neutral-400">
@@ -24,7 +23,7 @@ export const FAQSection = () => {
           </AccordionItem>
 
           <AccordionItem value="item-2" className="border-none cyber-border clip-corner bg-[#0a0a0a] px-4 rounded-none">
-            <AccordionTrigger className="text-neutral-300 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
+            <AccordionTrigger className="text-neutral-200 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
               Thời gian giao dịch bao lâu?
             </AccordionTrigger>
             <AccordionContent className="text-neutral-400">
@@ -33,7 +32,7 @@ export const FAQSection = () => {
           </AccordionItem>
 
           <AccordionItem value="item-3" className="border-none cyber-border clip-corner bg-[#0a0a0a] px-4 rounded-none">
-            <AccordionTrigger className="text-neutral-300 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
+            <AccordionTrigger className="text-neutral-200 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
               Làm sao để thanh toán?
             </AccordionTrigger>
             <AccordionContent className="text-neutral-400">
@@ -42,7 +41,7 @@ export const FAQSection = () => {
           </AccordionItem>
 
           <AccordionItem value="item-4" className="border-none cyber-border clip-corner bg-[#0a0a0a] px-4 rounded-none">
-            <AccordionTrigger className="text-neutral-300 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
+            <AccordionTrigger className="text-neutral-200 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
               Tôi có được hỗ trợ cài đặt không?
             </AccordionTrigger>
             <AccordionContent className="text-neutral-400">
@@ -51,7 +50,7 @@ export const FAQSection = () => {
           </AccordionItem>
 
           <AccordionItem value="item-5" className="border-none cyber-border clip-corner bg-[#0a0a0a] px-4 rounded-none">
-            <AccordionTrigger className="text-neutral-300 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
+            <AccordionTrigger className="text-neutral-200 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
               Có thể gia hạn trên tài khoản chính chủ không?
             </AccordionTrigger>
             <AccordionContent className="text-neutral-400">
@@ -60,7 +59,7 @@ export const FAQSection = () => {
           </AccordionItem>
 
           <AccordionItem value="item-6" className="border-none cyber-border clip-corner bg-[#0a0a0a] px-4 rounded-none">
-            <AccordionTrigger className="text-neutral-300 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
+            <AccordionTrigger className="text-neutral-200 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
               Tại sao mức giá lại rẻ hơn mua trực tiếp?
             </AccordionTrigger>
             <AccordionContent className="text-neutral-400">
@@ -69,7 +68,7 @@ export const FAQSection = () => {
           </AccordionItem>
 
           <AccordionItem value="item-7" className="border-none cyber-border clip-corner bg-[#0a0a0a] px-4 rounded-none">
-            <AccordionTrigger className="text-neutral-300 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
+            <AccordionTrigger className="text-neutral-200 hover:text-secondary hover:no-underline font-bold uppercase text-sm">
               Thông tin của tôi có được bảo mật không?
             </AccordionTrigger>
             <AccordionContent className="text-neutral-400">

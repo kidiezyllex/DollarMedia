@@ -2,12 +2,12 @@
 
 import GoldButton from "@/components/ui/GoldButton";
 import GoldText from "@/components/ui/GoldText";
+import PremiumCard from "@/components/ui/PremiumCard";
+import PremiumHeader from "@/components/ui/PremiumHeader";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { mdiPlay, mdiShimmer } from "@mdi/js";
 import Icon from "@mdi/react";
-import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import { useState } from "react";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false }) as any;
@@ -43,83 +43,58 @@ export const RealDemoSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
-    <section id="demo" className="relative overflow-hidden pt-8 bg-[#010205]">
+    <section id="demo" className="relative overflow-hidden pt-8 bg-mainBackgroundV1">
       <div className="container mx-auto relative z-10">
-        {/* Header */}
-        <div className="flex flex-col items-center mb-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-2"
-          >
-            <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal">
-              DEMO THỰC TẾ
-            </GoldText>
-          </motion.div>
-
-          <div className="flex items-center gap-4 w-full max-w-3xl">
-            <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent via-accent to-accent"></div>
-            <p className="text-neutral-200 text-sm md:text-xl font-semibold uppercase">
-              KHÔNG NÓI LÝ THUYẾT - XEM CÁI HIỂU NGAY
-            </p>
-            <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent via-accent to-accent"></div>
-          </div>
-        </div>
+        <PremiumHeader>
+          DEMO THỰC TẾ
+        </PremiumHeader>
 
         <div className="grid grid-cols-2 gap-8 w-full">
           {demoItems.map((item, index) => (
-            <motion.div
+            <PremiumCard
+              backgroundPath="/images/halftone-dot-field-graphic-print.webp"
               key={item.id}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               onClick={() => setSelectedVideo(item.video)}
-              className="flex flex-col items-stretch gap-4 p-1 rounded-2xl border-2 border-accent/30 bg-black/60 backdrop-blur-xl group hover:border-accent transition-all duration-500 overflow-hidden cursor-pointer relative"
+              innerClassName="flex flex-col items-center gap-4 p-4 w-full"
             >
-              <Image
-                src="/images/magical-celestial-interstellar-frame.jpg"
-                alt="background"
-                fill
-                className="object-cover opacity-20 -z-10 scale-125"
-              />
-              <div className="flex flex-col items-center gap-4 p-4 w-full">
-                {/* Video Thumbnail */}
-                <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-white/10 group-hover:border-accent/50 transition-colors bg-black/40">
-                  <video
-                    src={item.video}
-                    muted
-                    loop
-                    playsInline
-                    autoPlay
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors flex items-center justify-center">
-                    <div className="w-14 h-14 rounded-full bg-black/40 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                      <Icon path={mdiPlay} size={1.5} className="text-white ml-1" />
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  {/* Number Box */}
-                  <div className="flex-shrink-0 w-20 h-20 rounded-xl border-2 border-accent flex items-center justify-center bg-black shadow-[0_0_25px_rgba(203,155,81,0.4)] transition-all">
-                    <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal">
-                      {item.id}
-                    </GoldText>
-                  </div>
-                  {/* Text Content */}
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-accent font-semibold text-lg mb-1 uppercase">
-                      {item.title}
-                    </h3>
-                    <p className="text-neutral-300 text-base md:text-base font-medium">
-                      {item.description}
-                    </p>
+              {/* Video Thumbnail */}
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-white/10 group-hover:border-accent/50 transition-colors bg-black/40">
+                <video
+                  src={item.video}
+                  muted
+                  loop
+                  playsInline
+                  autoPlay
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-full bg-black/40 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                    <Icon path={mdiPlay} size={1.5} className="text-white ml-1" />
                   </div>
                 </div>
               </div>
-            </motion.div>
+              <div className="flex items-start gap-4">
+                {/* Number Box */}
+                <div className="flex-shrink-0 w-20 h-20 rounded-xl border-2 border-accent flex items-center justify-center bg-black shadow-[0_0_25px_rgba(203,155,81,0.4)] transition-all">
+                  <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal">
+                    {item.id}
+                  </GoldText>
+                </div>
+                {/* Text Content */}
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-secondary font-semibold text-lg mb-1 uppercase">
+                    {item.title}
+                  </h3>
+                  <p className="text-neutral-200 text-base md:text-base font-medium">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </PremiumCard>
           ))}
         </div>
         <div className="flex justify-center w-full mt-8">

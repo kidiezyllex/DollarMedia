@@ -41,7 +41,7 @@ export const StatsSection = () => {
                            <Icon path={stat.icon} size={1} className="text-secondary" />
                         </div>
                         <p className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}<span className="text-secondary">{stat.suffix}</span></p>
-                        <p className="text-sm text-neutral-300 font-semibold">{stat.label}</p>
+                        <p className="text-sm text-neutral-200 font-semibold">{stat.label}</p>
                      </div>
                   </div>
                ))}

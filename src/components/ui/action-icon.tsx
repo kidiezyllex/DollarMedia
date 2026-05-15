@@ -12,11 +12,11 @@ const getVariantClasses = (variant?: string): string => {
 		case "destructive":
 			return "bg-destructive text-destructive-foreground hover:bg-destructive/90";
 		case "outline":
-			return "border border-[#ccc] hover:bg-accent hover:text-secondary-foreground";
+			return "border border-[#ccc] hover:bg-secondary hover:text-secondary-foreground";
 		case "secondary":
 			return "bg-secondary text-secondary-foreground hover:bg-secondary/80";
 		case "ghost":
-			return "hover:bg-accent hover:text-secondary-foreground";
+			return "hover:bg-secondary hover:text-secondary-foreground";
 		case "link":
 			return "text-primary underline-offset-4 hover:underline";
 		default:

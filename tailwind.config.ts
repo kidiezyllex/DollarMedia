@@ -49,7 +49,7 @@ const config: Config = {
 					DEFAULT: "#F8DE77",
 					foreground: "hsl(var(--secondary-foreground))",
 				},
-				mainBackgroundV1: "#F9F9FC",
+				mainBackgroundV1: "#440300",
 				mainCardV1: "#FFFFFF",
 				darkBorderV1: "#181818",
 				darkBackgroundV1: "#050505",

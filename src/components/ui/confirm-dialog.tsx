@@ -1,17 +1,17 @@
 import { Button } from "@/components/ui/button";
 import {
-    Dialog,
-    DialogContent,
-    DialogFooter,
-    DialogHeader,
-    DialogTitle,
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import {
-    mdiAlert,
-    mdiCheck,
-    mdiClose,
-    mdiLoading
+  mdiAlert,
+  mdiCheck,
+  mdiClose,
+  mdiLoading
 } from "@mdi/js";
 import Icon from "@mdi/react";
 
@@ -59,7 +59,7 @@ export const ConfirmDialog = ({
         </DialogHeader>
 
         <div className="p-3 md:p-4">
-          <p className="text-sm text-neutral-300">{description}</p>
+          <p className="text-sm text-neutral-200">{description}</p>
         </div>
 
         <DialogFooter>

@@ -10,7 +10,7 @@ const badgeVariants = cva(
       variant: {
         default: "border-darkBorderV1 text-darkBorderV1 text-nowrap",
         secondary:
-          "border-darkBorderV1 bg-secondary text-secondary-foreground hover:bg-secondary/80 text-neutral-300 text-nowrap",
+          "border-darkBorderV1 bg-secondary text-secondary-foreground hover:bg-secondary/80 text-neutral-200 text-nowrap",
         destructive:
           "bg-red-500/10 text-red-400 border-red-500/20",
         orange:
@@ -44,11 +44,11 @@ const badgeVariants = cva(
         gray: "bg-gray-500/10 text-gray-400 border-gray-500/20",
         zinc: "bg-zinc-500/10 text-neutral-400 border-zinc-500/20",
         neutral:
-          "bg-neutral-500/10 text-neutral-300 border-neutral-500/20",
+          "bg-neutral-500/10 text-neutral-200 border-neutral-500/20",
         stone:
           "bg-stone-500/10 text-stone-400 border-stone-500/20",
         ghost:
-          "hover:text-neutral-300 border-darkBorderV1 bg-darkBorderV1 text-neutral-300",
+          "hover:text-neutral-200 border-darkBorderV1 bg-darkBorderV1 text-neutral-200",
       },
     },
     defaultVariants: {

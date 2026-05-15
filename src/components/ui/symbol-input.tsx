@@ -61,7 +61,7 @@ const SymbolInput = React.forwardRef<HTMLInputElement, SymbolInputProps>(
                     value={value}
                     onChange={onChange}
                     className={cn(
-                        "block !h-10 w-full rounded-md bg-darkBorderV1 pl-3 pr-10 py-2 text-sm transition-colors file:border-0 file:bg-mainCardV1 file:text-sm file:font-semibold file:text-foreground focus:outline-none placeholder:text-neutral-400 placeholder:italic disabled:cursor-not-allowed disabled:opacity-50 focus:ring-gray-700/50 border border-darkBorderV1 text-neutral-300 focus:border-mainTextHoverV1",
+                        "block !h-10 w-full rounded-md bg-darkBorderV1 pl-3 pr-10 py-2 text-sm transition-colors file:border-0 file:bg-mainCardV1 file:text-sm file:font-semibold file:text-foreground focus:outline-none placeholder:text-neutral-400 placeholder:italic disabled:cursor-not-allowed disabled:opacity-50 focus:ring-gray-700/50 border border-darkBorderV1 text-neutral-200 focus:border-mainTextHoverV1",
                         className
                     )}
                     ref={inputRef}

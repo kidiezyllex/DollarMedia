@@ -132,7 +132,7 @@ Các ô nhập mật khẩu phải có chức năng ẩn/hiện mật khẩu s�
     <button
         type="button"
         onClick={() => setShowPassword(!showPassword)}
-        className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-300 hover:text-secondary transition-colors"
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-200 hover:text-secondary transition-colors"
     >
         <Icon path={showPassword ? mdiEyeOff : mdiEye} size={0.8} className="flex-shrink-0" />
     </button>
@@ -142,12 +142,12 @@ Các ô nhập mật khẩu phải có chức năng ẩn/hiện mật khẩu s�
 ## 11. Quy định về Màu sắc Text (Text Colors)
 Màu sắc của text **BẮT BUỘC** chỉ được sử dụng các class sau để duy trì tính đồng nhất. Cấm tuyệt đối việc sử dụng các mã màu HEX tự phát hoặc các class màu khác không có trong danh sách:
 - **`text-secondary`**: Dùng cho các tiêu đề quan trọng, các phần cần nhấn mạnh hoặc các trạng thái chủ đạo.
-- **`text-neutral-300`**: Dùng cho nội dung văn bản chính, thông tin chi tiết.
+- **`text-neutral-200`**: Dùng cho nội dung văn bản chính, thông tin chi tiết.
 - **`text-neutral-400`**: Dùng cho các đoạn văn bản phụ, ghi chú, placeholder hoặc thông tin ít quan trọng hơn.
 - **`text-white`**: Chỉ dùng khi thực sự cần độ tương phản cao nhất trên nền tối.
 
 ## 12. Quy định về sử dụng màu sắc
-Hiện tại giao diện đang sử dụng Dark Mode (không sử dụng light mode), nên các màu sắc chỉ sử dụng các màu đã config sau: text-neutral-400, text-neutral-300 và các màu đã được config như accent, darkBorderV1, darkBackgroundV1, darkCardV1
+Hiện tại giao diện đang sử dụng Dark Mode (không sử dụng light mode), nên các màu sắc chỉ sử dụng các màu đã config sau: text-neutral-400, text-neutral-200 và các màu đã được config như accent, darkBorderV1, darkBackgroundV1, darkCardV1
 
 ## 13. Quy định về Đơn vị Spacing (Gap, Padding, Margin, Space)
 Để đảm bảo nhịp điệu thị giác (visual rhythm) đồng nhất, dự án chỉ sử dụng các đơn vị chia hết cho 4 cho các thuộc tính spacing. Cụ thể:
@@ -166,7 +166,7 @@ Tất cả các ô nhập dữ liệu tìm kiếm (Search Input) trong toàn b�
         onClear={() => setSearchQuery("")}
         className="pl-8 py-2 w-full"
     />
-    <Icon path={mdiMagnify} size={0.8} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-300" />
+    <Icon path={mdiMagnify} size={0.8} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-200" />
 </div>
 ```
 *Lưu ý: Luôn sử dụng `pl-8` (hoặc `pl-9`) cho Input để nội dung không bị đè lên Icon. Icon phải sử dụng các class căn giữa tuyệt đối như mẫu bên trên.*

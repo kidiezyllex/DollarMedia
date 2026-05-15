@@ -1,7 +1,6 @@
 "use client";
 
 import { Footer } from "@/components/Landing/Footer";
-import { Header } from "@/components/Landing/Header";
 import { usePathname } from "next/navigation";
 import React from "react";
 
@@ -14,11 +13,11 @@ export const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] text-white selection:bg-primary/30 selection:text-secondary overflow-x-hidden relative flex flex-col">
+    <div className="min-h-screen bg-mainBackgroundV1 text-white selection:bg-primary/30 selection:text-secondary overflow-x-hidden relative flex flex-col">
       {/* Background Overlays */}
       <div className="scanline"></div>
       {/* <TopHeader /> */}
-      <Header />
+      {/* <Header /> */}
       {/* <FloatingContact /> */}
       <main className="relative z-10 flex-1">
         {children}

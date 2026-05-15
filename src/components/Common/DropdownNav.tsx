@@ -152,7 +152,7 @@ const PartnerMenuContent = () => (
 
 const AdminLink = ({ icon, title, href }: { icon: string, title: string, href: string }) => (
     <Link href={href} className="flex items-center gap-2 p-2 rounded-xl hover:bg-white/5 transition-all group">
-        <div className="w-8 h-8 rounded-lg bg-darkBorderV1 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/10 transition-colors">
+        <div className="w-8 h-8 rounded-lg bg-darkBorderV1 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/10 transition-colors">
             <Icon path={icon} size={0.8} className="text-neutral-400 group-hover:text-secondary transition-colors" />
         </div>
         <span className="text-neutral-400 text-sm font-semibold group-hover:text-secondary transition-colors">{title}</span>

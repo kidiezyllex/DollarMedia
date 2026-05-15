@@ -21,7 +21,7 @@ export const ToastProvider = () => {
         borderRadius: "8px",
         fontSize: "14px",
         background: "#051A1D", // darkCardV1
-        color: "#e5e7eb", // text-neutral-300
+        color: "#e5e7eb", // text-neutral-200
         fontWeight: 500,
         boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.4)",
         padding: "16px 20px",

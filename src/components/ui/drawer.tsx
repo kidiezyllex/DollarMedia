@@ -63,7 +63,7 @@ const DrawerContent = React.forwardRef<
 				)}
 				{children}
 				<DrawerPrimitive.Close className="absolute right-4 top-4 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-darkBackgroundV1 data-[state=open]:text-gray-500 bg-white/5 rounded-full p-2">
-					<Icon path={mdiClose} size={0.8} className="text-neutral-300" />
+					<Icon path={mdiClose} size={0.8} className="text-neutral-200" />
 					<span className="sr-only">Close</span>
 				</DrawerPrimitive.Close>
 			</DrawerPrimitive.Content>
@@ -106,3 +106,4 @@ export {
 	Drawer, DrawerClose,
 	DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerPortal, DrawerTitle, DrawerTrigger
 };
+

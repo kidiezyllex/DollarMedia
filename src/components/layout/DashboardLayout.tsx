@@ -4,18 +4,17 @@ import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import { RippleEffect } from "@/components/ui/ripple-effect";
 import { useResponsive } from "@/hooks/use-mobile";
 import { MenuItem } from "@/interface/types";
+import { clearAuthData } from "@/lib/auth";
 import { cn } from "@/lib/utils";
-import { mdiFullscreen, mdiFullscreenExit, mdiMenu, mdiLogout } from "@mdi/js";
+import { mdiFullscreen, mdiFullscreenExit, mdiLogout, mdiMenu } from "@mdi/js";
 import { Icon } from "@mdi/react";
 import { AnimatePresence, motion } from "framer-motion";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React, { Suspense, useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { getDashboardMenuItems } from "./dashboardMenuItems";
-import { clearAuthData } from "@/lib/auth";
 
 function InternalHeader({ toggle, isOpen }: { toggle: () => void, isOpen: boolean }) {
   const router = useRouter();
@@ -26,7 +25,7 @@ function InternalHeader({ toggle, isOpen }: { toggle: () => void, isOpen: boolea
     if (userStr) {
       try {
         setUser(JSON.parse(userStr));
-      } catch (e) {}
+      } catch (e) { }
     }
   }, []);
 
@@ -45,7 +44,7 @@ function InternalHeader({ toggle, isOpen }: { toggle: () => void, isOpen: boolea
           <Image src="/images/primary-logo.png" width={150} height={40} alt="Logo" className="h-8 w-auto" />
         </Link>
       </div>
-      
+
       <div className="flex items-center gap-4">
         {user && (
           <div className="hidden md:flex flex-col items-end mr-2">
@@ -53,9 +52,9 @@ function InternalHeader({ toggle, isOpen }: { toggle: () => void, isOpen: boolea
             <span className="text-xs text-neutral-400 capitalize">{user.role || 'Administrator'}</span>
           </div>
         )}
-        <Button 
-          variant="ghost" 
-          size="icon" 
+        <Button
+          variant="ghost"
+          size="icon"
           onClick={handleLogout}
           title="Đăng xuất"
           className="text-neutral-400 hover:text-red-400 transition-colors"
@@ -97,7 +96,7 @@ function DesktopLayout({ children, isOpen, toggle }: { children: React.ReactNode
     if (userStr) {
       try {
         setProfile(JSON.parse(userStr));
-      } catch (e) {}
+      } catch (e) { }
     }
   }, []);
 
@@ -142,8 +141,8 @@ function DesktopLayout({ children, isOpen, toggle }: { children: React.ReactNode
                             className={cn(
                               "flex items-center rounded-lg p-2 h-[44px] text-sm font-medium transition-all duration-300 border cursor-pointer",
                               isMenuActive(menu)
-                                ? "bg-accent/10 text-secondary border-accent/20 shadow-[0_0_15px_rgba(68,215,182,0.1)]"
-                                : "text-neutral-400 border-transparent hover:bg-accent/5 hover:text-secondary/80 hover:border-accent/10",
+                                ? "bg-secondary/10 text-secondary border-accent/20 shadow-[0_0_15px_rgba(68,215,182,0.1)]"
+                                : "text-neutral-400 border-transparent hover:bg-secondary/5 hover:text-secondary/80 hover:border-accent/10",
                               !isOpen && "!justify-center w-[46px]",
                             )}
                           >
@@ -218,7 +217,7 @@ function TabletLayout({ children, isOpen, toggle }: { children: React.ReactNode,
     if (userStr) {
       try {
         setProfile(JSON.parse(userStr));
-      } catch (e) {}
+      } catch (e) { }
     }
   }, []);
 
@@ -237,8 +236,8 @@ function TabletLayout({ children, isOpen, toggle }: { children: React.ReactNode,
                 <div className={cn(
                   "w-12 h-12 rounded-xl flex items-center justify-center transition-all border cursor-pointer",
                   pathname === menu.path
-                    ? "bg-accent/10 text-secondary border-accent/20 shadow-[0_0_15px_rgba(68,215,182,0.1)]"
-                    : "text-neutral-400 border-transparent hover:bg-accent/5"
+                    ? "bg-secondary/10 text-secondary border-accent/20 shadow-[0_0_15px_rgba(68,215,182,0.1)]"
+                    : "text-neutral-400 border-transparent hover:bg-secondary/5"
                 )}>
                   <Icon path={menu.icon} size={0.8} />
                 </div>
@@ -263,7 +262,7 @@ function MobileLayout({ children, isOpen, toggle }: { children: React.ReactNode,
     if (userStr) {
       try {
         setProfile(JSON.parse(userStr));
-      } catch (e) {}
+      } catch (e) { }
     }
   }, []);
 
@@ -292,12 +291,12 @@ function MobileLayout({ children, isOpen, toggle }: { children: React.ReactNode,
                 <div className={cn(
                   "flex items-center gap-3 p-3 rounded-xl transition-all border cursor-pointer mb-2",
                   pathname === item.path
-                    ? "bg-accent/10 text-secondary border-accent/20"
-                    : "text-neutral-300 border-transparent hover:bg-accent/5"
+                    ? "bg-secondary/10 text-secondary border-accent/20"
+                    : "text-neutral-200 border-transparent hover:bg-secondary/5"
                 )}>
                   <div className={cn(
                     "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0",
-                    pathname === item.path ? "bg-accent/20" : "bg-darkBorderV1"
+                    pathname === item.path ? "bg-secondary/20" : "bg-darkBorderV1"
                   )}>
                     <Icon path={item.icon} size={0.8} />
                   </div>

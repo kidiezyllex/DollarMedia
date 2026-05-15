@@ -10,7 +10,7 @@ export const NewsSection = () => {
       <section id="news" className="py-16 bg-[#080808] border-t border-primary/20 relative">
          <div className="max-w-8xl mx-auto px-4 sm:px-4 lg:px-8">
             <div className="text-center mb-16">
-               <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight mb-4 text-neutral-300">Blog <span className="text-secondary">Công nghệ</span></h2>
+               <h2 className="text-3xl md:text-5xl font-semibold uppercase tracking-tight mb-4 text-neutral-200">Blog <span className="text-secondary">Công nghệ</span></h2>
                <p className="text-neutral-400 max-w-2xl mx-auto">Cập nhật những tin tức mới nhất về trí tuệ nhân tạo và mẹo công nghệ hữu ích.</p>
             </div>
 
@@ -22,8 +22,8 @@ export const NewsSection = () => {
                   </div>
                   <div className="relative z-10 pl-6">
                      <Badge variant="sky">HOT NEWS</Badge>
-                     <h3 className="text-2xl md:text-3xl font-bold uppercase text-neutral-300 mb-2 leading-tight">Gemini 1.5 Pro ra mắt: Kỷ nguyên AI mới</h3>
-                     <p className="text-neutral-300 text-sm max-w-lg mb-4 line-clamp-2">Khám phá khả năng xử lý context window khổng lồ và cách ứng dụng vào công việc phân tích dữ liệu hiệu quả.</p>
+                     <h3 className="text-2xl md:text-3xl font-bold uppercase text-neutral-200 mb-2 leading-tight">Gemini 1.5 Pro ra mắt: Kỷ nguyên AI mới</h3>
+                     <p className="text-neutral-200 text-sm max-w-lg mb-4 line-clamp-2">Khám phá khả năng xử lý context window khổng lồ và cách ứng dụng vào công việc phân tích dữ liệu hiệu quả.</p>
                      <div className="w-full flex justify-center">
                         <CyberButton text="Xem bài viết" size="medium" variant="solid" />
                      </div>
@@ -37,7 +37,7 @@ export const NewsSection = () => {
                   </div>
                   <div className="relative z-10">
                      <Badge variant="neutral">12/05/2026</Badge>
-                     <h3 className="text-lg font-bold uppercase text-neutral-300 mt-1 mb-2">Cách bảo mật tài khoản AI</h3>
+                     <h3 className="text-lg font-bold uppercase text-neutral-200 mt-1 mb-2">Cách bảo mật tài khoản AI</h3>
                      <div className="w-full flex justify-center">
                         <CyberButton text="Xem bài viết" size="medium" variant="solid" />
                      </div>
@@ -51,7 +51,7 @@ export const NewsSection = () => {
                   </div>
                   <div className="relative z-10">
                      <Badge variant="neutral">10/05/2026</Badge>
-                     <h3 className="text-lg font-bold uppercase text-neutral-300 mt-1 mb-2">Review các công cụ AI Design</h3>
+                     <h3 className="text-lg font-bold uppercase text-neutral-200 mt-1 mb-2">Review các công cụ AI Design</h3>
                      <div className="w-full flex justify-center">
                         <CyberButton text="Xem bài viết" size="medium" variant="solid" />
                      </div>

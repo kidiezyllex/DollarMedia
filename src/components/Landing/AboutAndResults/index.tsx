@@ -1,6 +1,5 @@
 "use client";
 
-import GoldText from "@/components/ui/GoldText";
 import {
   mdiCalendarMonthOutline,
   mdiCheckDecagram,
@@ -21,6 +20,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import GoldButton from "@/components/ui/GoldButton";
+import PremiumHeader from "@/components/ui/PremiumHeader";
 import { cn } from "@/lib/utils";
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -85,19 +85,10 @@ export const AboutAndResults = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
   return (
-    <section id="about" className="relative w-full bg-[#010205] overflow-hidden mb-8">
-      <Image
-        src="/images/linefooter.png"
-        alt="line decoration"
-        width={1920}
-        height={10}
-        className="w-full h-auto "
-      />
-      <div className="flex justify-center w-full mb-8">
-        <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal !leading-normal">
-          VỀ CHÚNG TÔI
-        </GoldText>
-      </div>
+    <section id="about" className="relative w-full overflow-hidden">
+      <PremiumHeader>
+        VỀ CHÚNG TÔI
+      </PremiumHeader>
       <div className="relative z-10">
         {/* SECTION 1: ABOUT US */}
         <div className="flex items-start gap-6 border-2 border-accent/30 rounded-3xl p-6 mx-auto container relative overflow-hidden group">
@@ -110,21 +101,14 @@ export const AboutAndResults = () => {
               width={1200}
               height={1200}
               draggable={false}
-              className="w-full h-auto object-contain"
-            />
-            <Image
-              src="/images/linefooter.png"
-              alt="line decoration"
-              width={1920}
-              height={10}
-              className="w-full h-auto "
+              className="w-full h-auto object-contain rounded-2xl"
             />
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-accent text-lg font-semibold">
+              <p className="text-secondary text-lg font-semibold">
                 Chúng tôi xây dựng Dollar Media với mục tiêu:
               </p>
             </motion.div>
@@ -144,10 +128,10 @@ export const AboutAndResults = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="flex items-center gap-3"
                 >
-                  <div className="bg-accent rounded-full p-1 flex-shrink-0">
+                  <div className="bg-secondary rounded-full p-1 flex-shrink-0">
                     <Icon path={mdiCheckDecagram} size={0.8} className="text-black" />
                   </div>
-                  <span className="text-neutral-300 font-medium">{item}</span>
+                  <span className="text-neutral-200 font-medium">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -156,7 +140,7 @@ export const AboutAndResults = () => {
 
           {/* Right: Team Showcase */}
           <div className="space-y-4 w-[60%]">
-            <p className="text-accent text-lg font-semibold">
+            <p className="text-secondary text-lg font-semibold">
               Một vài kết quả của ae đã đồng hành với bên mình sau 2 tháng triển khai đúng quy trình:
             </p>
             <div className="w-full space-y-4 relative group/swiper">
@@ -190,10 +174,10 @@ export const AboutAndResults = () => {
               </Swiper>
 
               {/* Custom Navigation Buttons */}
-              <button className="prev-btn absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-accent rounded-full p-1 shadow-lg hover:scale-110 transition-all opacity-0 group-hover/swiper:opacity-100 disabled:opacity-0">
+              <button className="prev-btn absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-secondary rounded-full p-1 shadow-lg hover:scale-110 transition-all opacity-0 group-hover/swiper:opacity-100 disabled:opacity-0">
                 <Icon path={mdiChevronLeft} size={1} className="text-black" />
               </button>
-              <button className="next-btn absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-accent rounded-full p-1 shadow-lg hover:scale-110 transition-all opacity-0 group-hover/swiper:opacity-100 disabled:opacity-0">
+              <button className="next-btn absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-secondary rounded-full p-1 shadow-lg hover:scale-110 transition-all opacity-0 group-hover/swiper:opacity-100 disabled:opacity-0">
                 <Icon path={mdiChevronRight} size={1} className="text-black" />
               </button>
 
@@ -224,27 +208,17 @@ export const AboutAndResults = () => {
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative pb-8 pt-1">
           <Image
             src="/images/black-and-gold-luxury-background2.jpg"
             alt="background"
             fill
             className="object-fill w-full opacity-20 -z-10"
           />
-          <Image
-            src="/images/linefooter.png"
-            alt="line decoration"
-            width={1920}
-            height={10}
-            className="w-full h-auto opacity-60"
-          />
-          <div className="flex justify-center w-full mb-8">
-            <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal">
-              GÓI SỬ DỤNG
-            </GoldText>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-4 mx-auto container ">
+          <PremiumHeader>
+            GÓI SỬ DỤNG
+          </PremiumHeader>
+          <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-4 mx-auto container">
             {[1, 2, 3].map((num) => (
               <motion.div
                 key={num}
@@ -285,7 +259,7 @@ export const AboutAndResults = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-5xl font-semibold text-accent italic leading-tight uppercase"
+                className="text-3xl md:text-5xl font-semibold text-secondary italic leading-tight uppercase"
               >
                 SẴN SÀNG BỨT PHÁ <br /> DOANH THU CÙNG AI?
               </motion.h2>

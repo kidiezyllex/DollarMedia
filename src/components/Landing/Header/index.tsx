@@ -58,18 +58,18 @@ export const Header = () => {
             <div className="lg:hidden flex items-center gap-3">
               <Drawer direction="right">
                 <DrawerTrigger asChild>
-                  <button className="text-neutral-300 group p-3 bg-white/5 rounded-full transition-colors">
+                  <button className="text-neutral-200 group p-3 bg-white/5 rounded-full transition-colors">
                     <Icon path={mdiMenu} size={0.8} className="text-neutral-400 group-hover:text-secondary transition-colors" />
                   </button>
                 </DrawerTrigger>
                 <DrawerContent className="bg-[#050505] border-primary/20">
                   <div className="px-4 py-8 space-y-8 flex flex-col h-full">
                     <div className="flex flex-col gap-4 font-medium">
-                      <Link href="#hero" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Trang Chủ</Link>
-                      <Link href="#demo" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Demo</Link>
-                      <Link href="#ai-tool" className="text-neutral-300 hover:text-secondary text-sm transition-colors">AI Tool</Link>
-                      <Link href="#automation" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Tính năng</Link>
-                      <Link href="#about" className="text-neutral-300 hover:text-secondary text-sm transition-colors">Về chúng tôi</Link>
+                      <Link href="#hero" className="text-neutral-200 hover:text-secondary text-sm transition-colors">Trang Chủ</Link>
+                      <Link href="#demo" className="text-neutral-200 hover:text-secondary text-sm transition-colors">Demo</Link>
+                      <Link href="#ai-tool" className="text-neutral-200 hover:text-secondary text-sm transition-colors">AI Tool</Link>
+                      <Link href="#automation" className="text-neutral-200 hover:text-secondary text-sm transition-colors">Tính năng</Link>
+                      <Link href="#about" className="text-neutral-200 hover:text-secondary text-sm transition-colors">Về chúng tôi</Link>
                     </div>
 
                     <div className="flex flex-col gap-4">

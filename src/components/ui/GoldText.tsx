@@ -23,7 +23,7 @@ const GoldText: React.FC<GoldTextProps> = ({ children, className, absolute = tru
         className
       )}
       style={{
-        backgroundImage: 'linear-gradient(to right, #462523 0%, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%)',
+        backgroundImage: 'linear-gradient(to right, #cb9b51 0%, #d4af37 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #d4af37 78%, #cb9b51 100%)',
         WebkitBackgroundClip: 'text',
       }}
     >

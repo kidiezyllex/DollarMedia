@@ -80,11 +80,11 @@ export const Testimonials = () => {
               <div className="flex text-secondary mb-4">
                 {[1, 2, 3, 4, 5].map(star => <Icon key={star} path={mdiStar} size={0.8} />)}
               </div>
-              <p className="text-neutral-300 text-sm leading-relaxed mb-4 line-clamp-4">&quot;{rev.txt}&quot;</p>
+              <p className="text-neutral-200 text-sm leading-relaxed mb-4 line-clamp-4">&quot;{rev.txt}&quot;</p>
               <div className="flex items-center gap-3">
                 <img src={rev.img} referrerPolicy="no-referrer" alt={rev.name} className="w-12 h-12 rounded-full border-2 border-secondary/70" />
                 <div>
-                  <h4 className="font-semibold text-neutral-300 capitalize text-sm mb-1">{rev.name}</h4>
+                  <h4 className="font-semibold text-neutral-200 capitalize text-sm mb-1">{rev.name}</h4>
                   <Badge variant="sky">{rev.role}</Badge>
                 </div>
               </div>
