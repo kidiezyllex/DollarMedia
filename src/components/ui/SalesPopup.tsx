@@ -86,13 +86,13 @@ export function SalesPopup() {
         <div className="text-sm font-medium text-secondary mt-0.5 leading-tight">
           {currentSale.product}
         </div>
-        <div className="text-sm italic text-neutral-500 mt-1">
+        <div className="text-sm italic text-neutral-400 mt-1">
           {currentSale.time}
         </div>
       </div>
       <button
         onClick={() => setIsVisible(false)}
-        className="text-neutral-500 hover:text-white transition-colors flex-shrink-0"
+        className="text-neutral-400 hover:text-white transition-colors flex-shrink-0"
       >
         <Icon path={mdiClose} size={0.6} />
       </button>

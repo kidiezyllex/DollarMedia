@@ -35,7 +35,7 @@ export const Header = () => {
       return <img src={iconMap[slug]} alt={slug} className="w-full h-full object-contain" />;
     }
 
-    return <Icon path={mdiFormatListBulletedType} size={1} className="text-neutral-500" />;
+    return <Icon path={mdiFormatListBulletedType} size={1} className="text-neutral-400" />;
   };
 
   return (
