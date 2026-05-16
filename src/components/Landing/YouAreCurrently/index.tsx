@@ -39,7 +39,7 @@ const statusSections = [
 
 export const YouAreCurrently = () => {
     return (
-        <section id="current-status" className="relative overflow-hidden container px-4 mx-auto">
+        <section id="current-status" className="relative overflow-hidden sm:container px-4 mx-auto">
             <PremiumHeader>
                 HIỆN TẠI BẠN ĐANG
             </PremiumHeader>
@@ -86,7 +86,7 @@ export const YouAreCurrently = () => {
                 {/* Bottom support banner */}
                 <div className="mt-4 p-4 rounded-xl border border-dashed border-accent/50 bg-gradient-to-r from-accent/5 via-accent/10 to-accent/5 flex items-center justify-between gap-4">
                     <Icon path={mdiStarOutline} size={1} className="text-secondary hidden md:block" />
-                    <p className="text-secondary text-sm font-semibold text-center uppercase">
+                    <p className="text-secondary text-xs sm:text-sm font-semibold text-center uppercase">
                         CHÚNG TÔI LUÔN SẴN SÀNG ĐỒNG HÀNH HỖ TRỢ ANH EM TỪ VIỆC TRIỂN KHAI TOOL ĐẾN VIỆC TRIỂN KHAI HỆ THỐNG KÊNH SAO CHO HIỆU QUẢ
                     </p>
                     <Icon path={mdiStarOutline} size={1} className="text-secondary hidden md:block" />

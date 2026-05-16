@@ -23,7 +23,7 @@ const PremiumCard: React.FC<PremiumCardProps> = ({
     <motion.div
       {...props}
       className={cn(
-        "flex flex-col items-stretch gap-4 rounded-3xl border-2 border-accent/70 hover:border-accent shadow-2xl group transition-all duration-500 cursor-pointer relative overflow-hidden",
+        "flex flex-col items-stretch gap-3 sm:gap-4 rounded-3xl border-2 border-accent/70 hover:border-accent shadow-2xl group transition-all duration-500 cursor-pointer relative overflow-hidden",
         className
       )}
     >

@@ -39,7 +39,7 @@ export const Footer = () => {
         ))}
       </div>
 
-      <div className="container px-4 mx-auto sm:px-4 lg:px-8 relative z-10">
+      <div className="sm:container px-4 mx-auto sm:px-4 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
           <div className="col-span-1 lg:col-span-2 space-y-2">
             <div className="flex gap-2 items-center">
@@ -91,7 +91,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary/20 pt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-400">
+        <div className="border-t border-primary/20 pt-4 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-xs text-neutral-400">
           <p>© 2026 {SHOP_INFO.name}. All Rights Reserved. System initialized.</p>
           <div className="flex gap-4">
             <span className="hover:text-neutral-400 cursor-pointer">Privacy Policy</span>

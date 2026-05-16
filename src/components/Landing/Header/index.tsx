@@ -43,7 +43,7 @@ export const Header = () => {
                 </DrawerTrigger>
                 <DrawerContent className="bg-[#050505] border-primary/20">
                   <div className="px-4 py-8 space-y-8 flex flex-col h-full">
-                    <div className="flex flex-col gap-4 font-medium">
+                    <div className="flex flex-col gap-3 sm:gap-4 font-medium">
                       <Link href="#hero" className="text-neutral-200 hover:text-secondary text-sm transition-colors">Trang Chủ</Link>
                       <Link href="#demo" className="text-neutral-200 hover:text-secondary text-sm transition-colors">Demo</Link>
                       <Link href="#ai-tool" className="text-neutral-200 hover:text-secondary text-sm transition-colors">AI Tool</Link>

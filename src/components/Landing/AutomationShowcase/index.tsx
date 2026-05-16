@@ -58,12 +58,12 @@ export const AutomationShowcase = () => {
   };
 
   return (
-    <section id="automation" className="relative container px-4 mx-auto">
+    <section id="automation" className="relative sm:container px-4 mx-auto">
       <PremiumHeader>
         TÍNH NĂNG TOOL
       </PremiumHeader>
       {/* BOTTOM SECTION: VIDEO DEMO */}
-      <div className="mx-auto container">
+      <div className="mx-auto sm:container">
         <PremiumCard backgroundPath="/images/black-and-gold-luxury-background2.webp" className="p-4 md:p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             {/* Left: Video Placeholder */}

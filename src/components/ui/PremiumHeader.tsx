@@ -18,8 +18,8 @@ const PremiumHeader: React.FC<PremiumHeaderProps> = ({
   textClassName,
 }) => {
   return (
-    <div className={cn("flex flex-col items-center my-8 text-center", className)}>
-      <div className="flex items-center gap-4 w-full max-w-3xl">
+    <div className={cn("flex flex-col items-center my-6 md:my-8 text-center", className)}>
+      <div className="flex items-center gap-3 sm:gap-4 w-full max-w-3xl">
         <div className="h-[3px] flex-1 bg-gradient-to-r from-transparent via-secondary to-secondary rounded-r-full"></div>
         <Icon path={mdiFlare} size={1} className="text-secondary" />
         <GoldText

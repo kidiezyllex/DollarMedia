@@ -74,8 +74,8 @@ export const RealDemo = () => {
   };
 
   return (
-    <section id="demo" className="relative overflow-hidden bg-mainBackgroundV1 sm:bg-red-500 md:bg-blue-500 lg:bg-green-500">
-      <div className="container px-4 mx-auto relative z-10">
+    <section id="demo" className="relative overflow-hidden bg-mainBackgroundV1">
+      <div className="sm:container px-4 mx-auto relative z-10">
         <PremiumHeader>
           DEMO THỰC TẾ
         </PremiumHeader>
@@ -90,7 +90,7 @@ export const RealDemo = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               onClick={() => setSelectedVideo(item.video)}
-              innerClassName="flex flex-col items-center gap-4 p-4 w-full"
+              innerClassName="flex flex-col items-center gap-3 sm:gap-4 p-4 w-full"
             >
               {/* Video Thumbnail */}
               <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-white/10 group-hover:border-accent/50 transition-colors bg-black/40">
@@ -116,15 +116,18 @@ export const RealDemo = () => {
                   </GoldText>
                 </div>
                 {/* Text Content */}
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-secondary font-semibold text-lg uppercase">
+                <div className="flex-1 text-left">
+                  <h3 className="text-secondary font-semibold text-base sm:text-lg uppercase">
                     {item.title}
                   </h3>
-                  <p className="text-neutral-200 text-base md:text-base font-medium">
+                  <p className="text-neutral-200 text-base md:text-base font-medium sm:block hidden">
                     {item.description}
                   </p>
                 </div>
               </div>
+              <p className="text-neutral-200 text-base md:text-base font-medium block sm:hidden">
+                {item.description}
+              </p>
             </PremiumCard>
           ))}
         </div>

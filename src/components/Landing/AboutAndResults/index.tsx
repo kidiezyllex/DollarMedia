@@ -85,7 +85,7 @@ export const AboutAndResults = () => {
       <PremiumHeader>
         VỀ CHÚNG TÔI
       </PremiumHeader>
-      <div className="relative z-10 mx-auto container px-4">
+      <div className="relative z-10 mx-auto sm:container px-4">
         {/* SECTION 1: ABOUT US */}
         <div className="flex lg:flex-row flex-col items-start gap-6 border-2 border-accent/30 rounded-3xl p-4 md:p-6 relative overflow-hidden group">
           {/* Left Info */}
@@ -223,7 +223,7 @@ export const AboutAndResults = () => {
         <PremiumHeader>
           GÓI SỬ DỤNG
         </PremiumHeader>
-        <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-4 mx-auto container px-4">
+        <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-3 sm:gap-4 mx-auto sm:container px-4">
           {[1, 2, 3].map((num) => (
             <motion.div
               key={num}
