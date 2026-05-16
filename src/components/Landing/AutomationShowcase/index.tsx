@@ -24,7 +24,7 @@ export const AutomationShowcase = () => {
         TÍNH NĂNG TOOL
       </PremiumHeader>
       {/* BOTTOM SECTION: VIDEO DEMO */}
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto container">
         <PremiumCard backgroundPath="/images/black-and-gold-luxury-background2.jpg" className="p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             {/* Left: Video Placeholder */}

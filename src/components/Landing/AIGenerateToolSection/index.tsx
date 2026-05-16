@@ -12,7 +12,7 @@ export const AIGenerateToolSection = () => {
             <PremiumHeader>
                 AI GENERATE TOOL
             </PremiumHeader>
-            <div className="max-w-7xl mx-auto">
+            <div className="container mx-auto">
                 <PremiumCard backgroundPath="/images/black-and-gold-luxury-background.jpg">
                     <div className="p-6">
                         <div className="grid grid-cols-2 items-start gap-6">

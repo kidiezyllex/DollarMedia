@@ -1,4 +1,4 @@
-import { mdiCheck, mdiChevronDown, mdiChevronUp, mdiFilterVariant } from "@mdi/js";
+import { mdiCheck, mdiChevronDown, mdiChevronUp } from "@mdi/js";
 import { Icon } from "@mdi/react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import * as React from "react";
@@ -18,17 +18,16 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-10 text-left w-full items-center justify-between whitespace-nowrap rounded-sm border border-darkBorderV1 bg-darkBorderV1 px-3 py-2 !text-sm text-neutral-200 ring-offset-background transition-colors placeholder:text-neutral-200 focus:border-accent focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 font-semibold",
+      "flex text-left items-center justify-between whitespace-nowrap border-darkBorderV1 bg-darkBorderV1 ring-offset-background  focus:border-accent  disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-full bg-white/5 border rounded-xl p-4 text-neutral-300 placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl font-medium",
       className
     )}
     {...props}
   >
     <div className="flex items-center gap-2 overflow-hidden">
-      <Icon path={mdiFilterVariant} size={0.8} className="text-neutral-200 flex-shrink-0" />
       {children}
     </div>
     <SelectPrimitive.Icon asChild>
-      <Icon path={mdiChevronDown} size={0.6} className="text-neutral-200 transition-transform duration-200 data-[state=open]:rotate-180" />
+      <Icon path={mdiChevronDown} size={1} className="text-neutral-200 flex-shrink-0 transition-transform duration-200 data-[state=open]:rotate-180" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
@@ -120,7 +119,7 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex w-full cursor-default select-none items-center rounded-sm py-2 pl-2 pr-8 text-sm text-neutral-200 outline-none transition-colors focus:bg-darkBorderV1 focus:text-neutral-200 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[state=checked]:text-secondary",
+      "relative flex w-full select-none items-center rounded-sm py-2 pl-2 pr-8 text-sm text-neutral-200 outline-none transition-colors focus:bg-darkBorderV1 focus:text-neutral-200 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[state=checked]:text-secondary cursor-pointer hover:text-secondary",
       className
     )}
     {...props}

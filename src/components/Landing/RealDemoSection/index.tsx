@@ -43,7 +43,7 @@ export const RealDemoSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   return (
-    <section id="demo" className="relative overflow-hidden pt-8 bg-mainBackgroundV1">
+    <section id="demo" className="relative overflow-hidden bg-mainBackgroundV1">
       <div className="container mx-auto relative z-10">
         <PremiumHeader>
           DEMO THỰC TẾ
@@ -79,14 +79,14 @@ export const RealDemoSection = () => {
               </div>
               <div className="flex items-start gap-4">
                 {/* Number Box */}
-                <div className="flex-shrink-0 w-20 h-20 rounded-xl border-2 border-accent flex items-center justify-center bg-black shadow-[0_0_25px_rgba(203,155,81,0.4)] transition-all">
+                <div className="flex-shrink-0 w-20 h-20 rounded-2xl border-2 border-accent flex items-center justify-center bg-black shadow-[0_0_25px_rgba(203,155,81,0.4)] transition-all">
                   <GoldText absolute={false} className="text-4xl md:!text-5xl !tracking-normal">
                     {item.id}
                   </GoldText>
                 </div>
                 {/* Text Content */}
                 <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-secondary font-semibold text-lg mb-1 uppercase">
+                  <h3 className="text-secondary font-semibold text-lg uppercase">
                     {item.title}
                   </h3>
                   <p className="text-neutral-200 text-base md:text-base font-medium">

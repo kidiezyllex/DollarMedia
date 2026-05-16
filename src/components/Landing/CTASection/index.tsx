@@ -6,6 +6,13 @@ import Icon from "@mdi/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useEffect, useState } from "react";
 
 export const CTASection = () => {
@@ -62,31 +69,36 @@ export const CTASection = () => {
           <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 blur-[100px] rounded-full" />
           <form className="space-y-4">
             <div className="space-y-2">
-              <label className="text-lg font-semibold text-accent uppercase">Họ và tên</label>
+              <label className="text-xl font-semibold text-accent">Họ và tên</label>
               <input
                 type="text"
                 placeholder="Nhập họ và tên của bạn"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-neutral-400 focus:outline-none focus:border-accent/50 transition-colors text-lg"
+                className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-lg font-semibold text-accent uppercase">Số điện thoại / Zalo</label>
+              <label className="text-xl font-semibold text-accent">Số điện thoại / Zalo</label>
               <input
                 type="tel"
                 placeholder="Nhập số điện thoại để chúng tôi liên hệ"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-neutral-400 focus:outline-none focus:border-accent/50 transition-colors text-lg"
+                className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-lg font-semibold text-accent uppercase">Lĩnh vực bạn quan tâm</label>
-              <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-neutral-400 focus:outline-none focus:border-accent/50 transition-colors appearance-none text-lg">
-                <option className="bg-neutral-900 ">Tạo video TikTok / Shorts</option>
-                <option className="bg-neutral-900">Xây dựng kênh Youtube Automation</option>
-                <option className="bg-neutral-900">Tự động hoá nội dung đa kênh</option>
-                <option className="bg-neutral-900">Khác</option>
-              </select>
+              <label className="text-xl font-semibold text-accent">Lĩnh vực bạn quan tâm</label>
+              <Select defaultValue="tiktok">
+                <SelectTrigger>
+                  <SelectValue placeholder="Chọn lĩnh vực bạn quan tâm" />
+                </SelectTrigger>
+                <SelectContent className="bg-neutral-900 border-accent/50 text-white">
+                  <SelectItem value="tiktok">Tạo video TikTok / Shorts</SelectItem>
+                  <SelectItem value="youtube">Xây dựng kênh Youtube Automation</SelectItem>
+                  <SelectItem value="multichannel">Tự động hoá nội dung đa kênh</SelectItem>
+                  <SelectItem value="other">Khác</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
             <div className="pt-4">
@@ -96,7 +108,7 @@ export const CTASection = () => {
               </GoldButton>
             </div>
 
-            <p className="text-lg text-neutral-400 text-center mt-4 italic">
+            <p className="text-xl text-neutral-400 text-center mt-4 italic">
               * Chúng tôi cam kết bảo mật thông tin của bạn tuyệt đối.
             </p>
           </form>
