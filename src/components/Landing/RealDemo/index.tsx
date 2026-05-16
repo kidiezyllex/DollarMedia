@@ -39,7 +39,7 @@ const demoItems = [
   },
 ];
 
-export const RealDemoSection = () => {
+export const RealDemo = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const scrollToAutomation = () => {
@@ -74,8 +74,8 @@ export const RealDemoSection = () => {
   };
 
   return (
-    <section id="demo" className="relative overflow-hidden bg-mainBackgroundV1">
-      <div className="container mx-auto relative z-10">
+    <section id="demo" className="relative overflow-hidden bg-mainBackgroundV1 sm:bg-red-500 md:bg-blue-500 lg:bg-green-500">
+      <div className="container px-4 mx-auto relative z-10">
         <PremiumHeader>
           DEMO THỰC TẾ
         </PremiumHeader>

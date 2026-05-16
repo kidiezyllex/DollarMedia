@@ -85,11 +85,11 @@ export const AboutAndResults = () => {
       <PremiumHeader>
         VỀ CHÚNG TÔI
       </PremiumHeader>
-      <div className="relative z-10">
+      <div className="relative z-10 mx-auto container px-4">
         {/* SECTION 1: ABOUT US */}
-        <div className="flex items-start gap-6 border-2 border-accent/30 rounded-3xl p-6 mx-auto container relative overflow-hidden group">
+        <div className="flex items-start gap-6 border-2 border-accent/30 rounded-3xl p-6 relative overflow-hidden group">
           {/* Left Info */}
-          <div className="space-y-4 w-[40%] ">
+          <div className="space-y-4 w-[40%]">
             {/* About us Image here */}
             <Image
               src="/images/about-us.webp"
@@ -142,7 +142,6 @@ export const AboutAndResults = () => {
               </Link>
             </div>
           </div>
-
           {/* Right: Team Showcase */}
           <div className="space-y-4 w-[60%]">
             <p className="text-secondary text-lg font-semibold">
@@ -213,50 +212,50 @@ export const AboutAndResults = () => {
             </div>
           </div>
         </div>
-        <div className="relative pb-8 pt-1">
-          <Image
-            src="/images/black-and-gold-luxury-background2.webp"
-            alt="background"
-            fill
-            className="object-fill w-full opacity-20 -z-10"
-          />
-          <PremiumHeader>
-            GÓI SỬ DỤNG
-          </PremiumHeader>
-          <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-4 mx-auto container">
-            {[1, 2, 3].map((num) => (
-              <motion.div
-                key={num}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: num * 0.1 }}
-                className={cn(
-                  "overflow-hidden group relative cursor-pointer",
-                  num === 2 ? "z-10 md:scale-105" : "md:scale-95 opacity-80 hover:opacity-100"
-                )}
-              >
-                <div className="relative w-full h-auto space-y-4">
-                  <Image
-                    src={`/images/packages/package${num}.webp`}
-                    alt={`Package ${num}`}
-                    width={800}
-                    height={1200}
-                    className="w-full object-fill h-auto block transition-transform duration-700 border-2 border-accent/30 rounded-3xl"
-                  />
-                  <div className="flex justify-center w-full">
-                    <GoldButton
-                      className="w-full h-[46px] text-sm group"
-                      onClick={() => openRegistration(num)}
-                    >
-                      ĐĂNG KÝ NGAY
-                      <Icon path={mdiChevronTripleRight} size={1} className="animate-move-left-right" />
-                    </GoldButton>
-                  </div>
+      </div>
+      <div className="relative pb-8 pt-1 mt-8">
+        <Image
+          src="/images/black-and-gold-luxury-background2.webp"
+          alt="background"
+          fill
+          className="object-fill w-full opacity-20 -z-10"
+        />
+        <PremiumHeader>
+          GÓI SỬ DỤNG
+        </PremiumHeader>
+        <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-4 mx-auto container">
+          {[1, 2, 3].map((num) => (
+            <motion.div
+              key={num}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: num * 0.1 }}
+              className={cn(
+                "overflow-hidden group relative cursor-pointer",
+                num === 2 ? "z-10 md:scale-105" : "md:scale-95 opacity-80 hover:opacity-100"
+              )}
+            >
+              <div className="relative w-full h-auto space-y-4">
+                <Image
+                  src={`/images/packages/package${num}.webp`}
+                  alt={`Package ${num}`}
+                  width={800}
+                  height={1200}
+                  className="w-full object-fill h-auto block transition-transform duration-700 border-2 border-accent/30 rounded-3xl"
+                />
+                <div className="flex justify-center w-full">
+                  <GoldButton
+                    className="w-full h-[46px] text-sm group"
+                    onClick={() => openRegistration(num)}
+                  >
+                    ĐĂNG KÝ NGAY
+                    <Icon path={mdiChevronTripleRight} size={1} className="animate-move-left-right" />
+                  </GoldButton>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 

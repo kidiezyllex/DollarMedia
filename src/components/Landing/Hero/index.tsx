@@ -4,7 +4,7 @@ import GoldButton from "@/components/ui/GoldButton";
 import Image from "next/image";
 import Link from "next/link";
 
-export const HeroSection = () => {
+export const Hero = () => {
   const scrollToDemo = () => {
     setTimeout(() => {
       const target = document.getElementById("demo");

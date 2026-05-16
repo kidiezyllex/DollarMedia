@@ -37,9 +37,9 @@ const statusSections = [
     }
 ];
 
-export const YouAreCurrentlySection = () => {
+export const YouAreCurrently = () => {
     return (
-        <section id="current-status" className="relative overflow-hidden container mx-auto">
+        <section id="current-status" className="relative overflow-hidden container px-4 mx-auto">
             <PremiumHeader>
                 HIỆN TẠI BẠN ĐANG
             </PremiumHeader>

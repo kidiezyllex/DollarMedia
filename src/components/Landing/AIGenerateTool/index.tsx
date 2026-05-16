@@ -8,13 +8,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-export const AIGenerateToolSection = () => {
+export const AIGenerateTool = () => {
     return (
         <section id="ai-tool" className="relative overflow-hidden">
             <PremiumHeader>
                 AI GENERATE TOOL
             </PremiumHeader>
-            <div className="container mx-auto">
+            <div className="container px-4 mx-auto">
                 <PremiumCard backgroundPath="/images/black-and-gold-luxury-background.webp">
                     <div className="p-6">
                         <div className="grid grid-cols-2 items-start gap-6">

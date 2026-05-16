@@ -16,7 +16,7 @@ const packageNames: Record<number, string> = {
   3: "Tool tạo video AI - Gói đồng hành 6 tháng 4.590.000 VNĐ",
 };
 
-export const CTASection = () => {
+export const CTA = () => {
   const [scale, setScale] = useState(1);
   const [selectedPackages, setSelectedPackages] = useState<number[]>([]);
   const [formData, setFormData] = useState({ name: "", phone: "", email: "" });

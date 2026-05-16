@@ -58,7 +58,7 @@ export const AutomationShowcase = () => {
   };
 
   return (
-    <section id="automation" className="relative container mx-auto">
+    <section id="automation" className="relative container px-4 mx-auto">
       <PremiumHeader>
         TÍNH NĂNG TOOL
       </PremiumHeader>

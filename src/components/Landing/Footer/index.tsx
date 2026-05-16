@@ -39,7 +39,7 @@ export const Footer = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-4 lg:px-8 relative z-10">
+      <div className="container px-4 mx-auto sm:px-4 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2 space-y-2">
             <div className="flex gap-2 items-center">
