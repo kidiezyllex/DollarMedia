@@ -20,8 +20,16 @@ export const Footer = () => {
 
   return (
     <footer className="bg-[#050505] pt-8 pb-4 border-t border-primary/40 relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/magical-celestial-interstellar-frame.webp"
+          alt="background"
+          fill
+          className="object-cover opacity-10 scale-110"
+        />
+      </div>
       {/* Barcode Deco */}
-      <div className="absolute top-0 right-10 w-32 h-8 opacity-20 flex items-center justify-between">
+      <div className="absolute top-0 right-10 w-32 h-8 opacity-20 flex items-center justify-between z-10">
         {widths.map((width, i) => (
           <div
             key={i}
@@ -31,7 +39,7 @@ export const Footer = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 sm:px-4 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-4 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-1 md:col-span-2 space-y-2">
             <div className="flex gap-2 items-center">
