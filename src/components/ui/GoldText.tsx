@@ -8,11 +8,13 @@ interface GoldTextProps {
   children: React.ReactNode;
   className?: string;
   absolute?: boolean;
+  as?: React.ElementType;
 }
 
-const GoldText: React.FC<GoldTextProps> = ({ children, className, absolute = true }) => {
+const GoldText: React.FC<GoldTextProps> = ({ children, className, absolute = true, as: Component = "span" }) => {
+  const MotionComponent = motion(Component as any);
   return (
-    <motion.span
+    <MotionComponent
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -28,7 +30,7 @@ const GoldText: React.FC<GoldTextProps> = ({ children, className, absolute = tru
       }}
     >
       {children}
-    </motion.span>
+    </MotionComponent>
   );
 };
 

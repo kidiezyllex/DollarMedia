@@ -18,7 +18,9 @@ export const metadata: Metadata = {
   keywords: [
     'Dollar Media', 'Furycore', 'tạo video ai', 'ai video automation', 'tự động hóa nội dung',
     'kiếm tiền youtube automation', 'tạo video tiktok ai', 'tạo video shorts ai',
-    'công cụ làm video tự động', 'ai content creator', 'hệ thống tạo video hàng loạt'
+    'công cụ làm video tự động', 'ai content creator', 'hệ thống tạo video hàng loạt',
+    'tạo video triệu view', 'phần mềm làm video ai', 'cách làm video tiktok tự động',
+    'youtube automation tool', 'shorts video creator'
   ],
   authors: [{ name: 'Dollar Media', url: 'https://mdpremium.com.vn' }],
   creator: 'Dollar Media',
@@ -88,12 +90,12 @@ import { ToastProvider } from '@/provider/ToastProvider';
 import NextTopLoader from 'nextjs-toploader';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const jsonLd = {
+  const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Dollar Media',
     url: 'https://mdpremium.com.vn',
-    logo: 'https://mdpremium.com.vn/logo.png', // Thay thế bằng logo thực tế
+    logo: 'https://mdpremium.com.vn/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+84846731111',
@@ -102,9 +104,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       availableLanguage: 'Vietnamese',
     },
     sameAs: [
-      'https://www.facebook.com/mdpremium', // Thay thế bằng link thực tế
-      'https://zalo.me/g/tsrsfm261',
+      'https://www.facebook.com/mdpremium',
+      'https://zalo.me/g/ake1jadogzfsxu8ntdkd',
     ],
+  };
+
+  const softwareJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Dollar Media AI Tool',
+    operatingSystem: 'Web',
+    applicationCategory: 'MultimediaApplication',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '1250'
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '899000',
+      priceCurrency: 'VND'
+    }
   };
 
   return (
@@ -112,7 +132,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
         />
       </head>
       <body className={cn(lexend.className, "bg-[#050505] text-white selection:bg-primary/30 selection:text-secondary")} suppressHydrationWarning>

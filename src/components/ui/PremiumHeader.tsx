@@ -10,12 +10,14 @@ interface PremiumHeaderProps {
   children: React.ReactNode;
   className?: string;
   textClassName?: string;
+  as?: React.ElementType;
 }
 
 const PremiumHeader: React.FC<PremiumHeaderProps> = ({
   children,
   className,
   textClassName,
+  as = "h2",
 }) => {
   return (
     <div className={cn("flex flex-col items-center my-6 md:my-8 text-center", className)}>
@@ -24,6 +26,7 @@ const PremiumHeader: React.FC<PremiumHeaderProps> = ({
         <Icon path={mdiFlare} size={1} className="text-secondary" />
         <GoldText
           absolute={false}
+          as={as}
           className={cn("text-4xl md:!text-5xl !tracking-normal !leading-normal", textClassName)}
         >
           {children}

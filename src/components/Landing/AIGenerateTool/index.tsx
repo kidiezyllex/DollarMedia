@@ -72,7 +72,7 @@ export const AIGenerateTool = () => {
                                 >
                                     <Image
                                         src="/images/day-khong-chi-la-tool-tao-video.webp"
-                                        alt="Đây không chỉ là tool tạo video"
+                                        alt="Hạ tầng AI Automation - Dollar Media giúp tự động hóa quy trình làm video TikTok và Youtube"
                                         width={1000}
                                         height={600}
                                         draggable={false}

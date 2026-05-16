@@ -38,6 +38,9 @@ export const Hero = () => {
 
   return (
     <section id="hero" className="relative flex flex-col items-center justify-center overflow-hidden">
+      <h1 className="sr-only">
+        Dollar Media - Công cụ AI Tạo Video Tự Động Chuyên Nghiệp trên TikTok, Shorts và Youtube Automation. Giải pháp bứt phá doanh thu với hệ thống AI tiên tiến nhất.
+      </h1>
       <div className="w-full z-0">
         <Image
           src="/images/hero-background.webp"

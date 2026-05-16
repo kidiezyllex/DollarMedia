@@ -93,7 +93,7 @@ export const AboutAndResults = () => {
             {/* About us Image here */}
             <Image
               src="/images/about-us.webp"
-              alt="About Us"
+              alt="Đội ngũ Dollar Media - Chuyên gia trong lĩnh vực AI Video và YouTube Automation"
               width={1200}
               height={1200}
               draggable={false}
