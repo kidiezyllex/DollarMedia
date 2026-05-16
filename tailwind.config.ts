@@ -32,6 +32,7 @@ const config: Config = {
 			fontFamily: {
 				sans: ["var(--font-lexend)", "ui-sans-serif", "system-ui"],
 				mono: ["var(--font-lexend)", "ui-monospace", "SFMono-Regular"],
+				times: ["Times New Roman", "Times", "serif"],
 			},
 			boxShadow: {
 				"light-grey": "0 4px 6px rgba(211, 211, 211, 0.6)",

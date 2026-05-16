@@ -20,7 +20,7 @@ const GoldText: React.FC<GoldTextProps> = ({ children, className, absolute = tru
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={cn(
         absolute && "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
-        "font-['Times_New_Roman',serif] tracking-[5px] text-[40px] md:text-[150px] font-bold",
+        "font-times tracking-[5px] text-[40px] md:text-[150px] font-bold",
         "bg-clip-text text-transparent select-none whitespace-nowrap py-1",
         className
       )}
