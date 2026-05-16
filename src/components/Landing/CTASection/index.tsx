@@ -3,8 +3,10 @@
 import GoldButton from "@/components/ui/GoldButton";
 import { mdiSend } from "@mdi/js";
 import Icon from "@mdi/react";
+import axios from "axios";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
 import { useEffect, useState } from "react";
 
@@ -17,6 +19,53 @@ const packageNames: Record<number, string> = {
 export const CTASection = () => {
   const [scale, setScale] = useState(1);
   const [selectedPackages, setSelectedPackages] = useState<number[]>([]);
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (selectedPackages.length === 0) {
+      toast.warning("Vui lòng chọn ít nhất một gói bạn quan tâm.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const selectedPackageLabels = selectedPackages
+      .map((id) => packageNames[id])
+      .join("\n- ");
+
+    const message = `
+<b>🚀 ĐĂNG KÝ MỚI TỪ LANDING PAGE DOLLAR MEDIA</b>
+<b>Gói quan tâm:</b> 
+- ${selectedPackageLabels}
+
+<b>Họ và tên:</b> ${formData.name}
+<b>Số điện thoại:</b> ${formData.phone}
+<b>Email:</b> ${formData.email}
+    `;
+
+    try {
+      const token = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
+      const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+      await axios.post(url, {
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'HTML',
+      });
+
+      toast.success("Gửi yêu cầu thành công! Chúng tôi sẽ liên hệ sớm.");
+      setFormData({ name: "", phone: "", email: "" });
+      setSelectedPackages([]);
+    } catch (error) {
+      console.error(error);
+      toast.error("Có lỗi xảy ra, vui lòng thử lại sau.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,12 +116,15 @@ export const CTASection = () => {
         >
           {/* Subtle glow */}
           <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 blur-[100px] rounded-full" />
-          <form className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <label className="text-xl font-semibold text-secondary">Họ và tên</label>
               <input
+                required
                 type="text"
                 placeholder="Nhập họ và tên của bạn"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl placeholder:italic"
               />
             </div>
@@ -80,8 +132,11 @@ export const CTASection = () => {
             <div className="space-y-2">
               <label className="text-xl font-semibold text-secondary">Số điện thoại / Zalo</label>
               <input
+                required
                 type="tel"
                 placeholder="Nhập số điện thoại để chúng tôi liên hệ"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl placeholder:italic"
               />
             </div>
@@ -89,8 +144,11 @@ export const CTASection = () => {
             <div className="space-y-2">
               <label className="text-xl font-semibold text-secondary">Email</label>
               <input
+                required
                 type="email"
                 placeholder="Nhập email của bạn"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl placeholder:italic"
               />
             </div>
@@ -126,9 +184,13 @@ export const CTASection = () => {
             </div>
 
             <div className="pt-4">
-              <GoldButton className="w-full h-16 text-lg group">
-                GỬI YÊU CẦU NGAY
-                <Icon path={mdiSend} size={1} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <GoldButton
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full h-16 text-lg group disabled:opacity-50"
+              >
+                {isSubmitting ? "ĐANG GỬI..." : "GỬI YÊU CẦU NGAY"}
+                {!isSubmitting && <Icon path={mdiSend} size={1} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
               </GoldButton>
             </div>
 

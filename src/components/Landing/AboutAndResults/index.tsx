@@ -44,13 +44,12 @@ export const AboutAndResults = () => {
     setIsSubmitting(true);
 
     const message = `
-<b>🚀 ĐĂNG KÝ GÓI MỚI - DOLLAR MEDIA</b>
+<b>🚀 ĐĂNG KÝ MỚI TỪ LANDING PAGE DOLLAR MEDIA</b>
 <b>Gói đăng ký:</b> ${selectedPackage}
 <b>Họ và tên:</b> ${formData.name}
 <b>Số điện thoại:</b> ${formData.phone}
 <b>Email:</b> ${formData.email}
 <b>Công việc:</b> ${formData.job}
-<b>Nguồn:</b> Gói sử dụng - About & Results
     `;
 
     try {
