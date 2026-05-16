@@ -3,6 +3,7 @@
 import GoldButton from "@/components/ui/GoldButton";
 import PremiumCard from "@/components/ui/PremiumCard";
 import PremiumHeader from "@/components/ui/PremiumHeader";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import {
   mdiCheckDecagram,
   mdiChevronTripleRight,
@@ -10,16 +11,54 @@ import {
   mdiYoutube
 } from "@mdi/js";
 import Icon from "@mdi/react";
-import Image from "next/image";
+import axios from "axios";
+import { useState } from "react";
+import { toast } from "react-toastify";
 export const AutomationShowcase = () => {
+  const [showVideo, setShowVideo] = useState(false);
+  const [showRegistration, setShowRegistration] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", job: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const videoUrl = "https://6b1c8wz28p.ufs.sh/f/j96j2uSUbsVoephVBqxdNkIo2y0YRuQaOTBVnwz9Etf5XHhc";
+
+  const handleRegistrationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const message = `
+<b>🚀 ĐĂNG KÝ MỚI TỪ LANDING PAGE DOLLAR MEDIA</b>
+<b>Họ và tên:</b> ${formData.name}
+<b>Email:</b> ${formData.email}
+<b>Số điện thoại:</b> ${formData.phone}
+<b>Công việc:</b> ${formData.job}
+<b>Nguồn:</b> Khách đã nhấn đăng ký từ phần "Tính năng Tool ~ Công cụ AI tạo video tự động"
+    `;
+
+    try {
+      const token = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
+      const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+      await axios.post(url, {
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'HTML',
+      });
+
+      toast.success("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
+      setShowRegistration(false);
+      setFormData({ name: "", email: "", phone: "", job: "" });
+    } catch (error) {
+      console.error(error);
+      toast.error("Có lỗi xảy ra, vui lòng thử lại sau.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="automation" className="relative container mx-auto">
-      {/* <Image
-        src="/images/black-and-gold-luxury-background.jpg"
-        alt="background"
-        fill
-        className="object-cover w-full opacity-20 -z-10"
-      /> */}
       <PremiumHeader>
         TÍNH NĂNG TOOL
       </PremiumHeader>
@@ -29,25 +68,30 @@ export const AutomationShowcase = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             {/* Left: Video Placeholder */}
             <div className="space-y-4">
-              <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-accent/30 shadow-2xl group cursor-pointer bg-neutral-900">
-                <Image
-                  src="/images/demo-3.png"
-                  alt="Video thumbnail"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+              <div
+                onClick={() => setShowVideo(true)}
+                className="relative aspect-video rounded-2xl overflow-hidden border-2 border-secondary/30 shadow-2xl group cursor-pointer bg-neutral-900"
+              >
+                <video
+                  src={videoUrl}
+                  muted
+                  loop
+                  playsInline
+                  autoPlay
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-black/60 backdrop-blur-md border-2 border-accent flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(203,155,81,0.5)]">
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-black/60 backdrop-blur-md border-2 border-secondary flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(203,155,81,0.5)]">
                     <Icon path={mdiPlay} size={1.5} className="text-secondary ml-1" />
                   </div>
                 </div>
               </div>
-              <div className="mt-8 p-4 rounded-xl border border-dashed border-accent/50 bg-gradient-to-r from-accent/5 via-accent/10 to-accent/5 flex items-center justify-between gap-4">
+              <div className="mt-8 p-3 rounded-xl border border-dashed border-secondary/50 bg-gradient-to-r from-secondary/5 via-secondary/10 to-secondary/5 flex items-center justify-between gap-2">
                 <div className="bg-secondary rounded-full p-1 flex-shrink-0">
                   <Icon path={mdiYoutube} size={0.8} className="text-black" />
                 </div>
-                <p className="text-secondary text-sm font-semibold text-start uppercase">
-                  VIDEO CHIA SẺ TÍNH NĂNG TOOL - HÃY DÀNH RA 8 PHÚT ĐỂ HIỂU CHI TIẾT VỀ TOOL NHA
+                <p className="text-secondary text-sm font-semibold text-start">
+                  Video chia sẻ tính năng tool, hãy dành ra 8 phút để hiểu chi tiết về tool nha!
                 </p>
               </div>
             </div>
@@ -79,8 +123,11 @@ export const AutomationShowcase = () => {
                 </p>
               </div>
               <div className="flex justify-center w-full">
-                <GoldButton className="w-[250px] h-[50px] text-sm group">
-                  MUA NGAY LIỀN TAY
+                <GoldButton
+                  className="w-[250px] h-[50px] text-sm group"
+                  onClick={() => setShowRegistration(true)}
+                >
+                  ĐĂNG KÝ NGAY LIỀN TAY
                   <Icon path={mdiChevronTripleRight} size={1} className="animate-move-left-right" />
                 </GoldButton>
               </div>
@@ -88,6 +135,88 @@ export const AutomationShowcase = () => {
           </div>
         </PremiumCard>
       </div>
+
+      <Dialog open={showVideo} onOpenChange={setShowVideo}>
+        <DialogContent size="large" className="p-2 bg-black/95 overflow-hidden border-none max-w-[95vw] md:max-w-[1100px] rounded-2xl">
+          {showVideo && (
+            <div className="w-full h-full flex items-center justify-center bg-black rounded-xl overflow-hidden shadow-2xl">
+              <video
+                src={videoUrl}
+                controls
+                autoPlay
+                className="w-full h-full max-h-[85vh] object-contain"
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Registration Dialog */}
+      <Dialog open={showRegistration} onOpenChange={setShowRegistration}>
+        <DialogContent size="small">
+          <div className="p-6 space-y-4">
+            <div className="text-center space-y-2">
+              <h2 className="text-3xl font-bold text-secondary">Đăng ký nhận tư vấn</h2>
+              <p className="text-neutral-300 text-sm">Vui lòng để lại thông tin, đội ngũ của chúng tôi sẽ liên hệ với bạn ngay lập tức.</p>
+            </div>
+
+            <form onSubmit={handleRegistrationSubmit} className="space-y-4">
+              <div className="space-y-1">
+                <label className="text-base font-semibold text-secondary ml-1">Họ và tên</label>
+                <input
+                  required
+                  type="text"
+                  placeholder="Nhập họ và tên của bạn"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-base font-semibold text-secondary ml-1">Số điện thoại / Zalo</label>
+                <input
+                  required
+                  type="tel"
+                  placeholder="Nhập số điện thoại của bạn"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-base font-semibold text-secondary ml-1">Email</label>
+                <input
+                  required
+                  type="email"
+                  placeholder="Nhập email của bạn"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-base font-semibold text-secondary ml-1">Công việc hiện tại</label>
+                <input
+                  required
+                  type="text"
+                  placeholder="Nhập công việc hiện tại của bạn"
+                  value={formData.job}
+                  onChange={(e) => setFormData({ ...formData, job: e.target.value })}
+                  className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
+                />
+              </div>
+              <GoldButton
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full h-12 text-base group disabled:opacity-50"
+              >
+                {isSubmitting ? "ĐANG GỬI..." : "GỬI YÊU CẦU NGAY"}
+                {!isSubmitting && <Icon path={mdiChevronTripleRight} size={0.8} className="animate-move-left-right" />}
+              </GoldButton>
+            </form>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

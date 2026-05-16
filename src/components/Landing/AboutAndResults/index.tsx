@@ -1,88 +1,84 @@
 "use client";
 
+import GoldButton from "@/components/ui/GoldButton";
+import PremiumHeader from "@/components/ui/PremiumHeader";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
 import {
-  mdiCalendarMonthOutline,
   mdiCheckDecagram,
   mdiChevronLeft,
   mdiChevronRight,
-  mdiChevronTripleRight,
-  mdiClockOutline,
-  mdiHeadset,
-  mdiLaptop,
-  mdiYoutube
+  mdiChevronTripleRight
 } from "@mdi/js";
 import Icon from "@mdi/react";
+import axios from "axios";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import GoldButton from "@/components/ui/GoldButton";
-import PremiumHeader from "@/components/ui/PremiumHeader";
-import { cn } from "@/lib/utils";
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
-
 const slideImages = Array.from({ length: 11 }, (_, i) => `/images/slides/slide${i + 1}.jpg`);
 
-const teamData = [
-  {
-    title: "ĐỘI NGŨ IT",
-    color: "blue",
-    icon: mdiLaptop,
-    items: [
-      "Nâng cấp tool liên tục",
-      "Tối ưu hiệu suất",
-      "Fix lỗi - Bảo trì hệ thống"
-    ],
-    bg: "bg-blue-600/20",
-    border: "border-blue-500/50",
-    image: "/images/demo-3.png"
-  },
-  {
-    title: "ĐỘI NGŨ SUPPORT",
-    color: "green",
-    icon: mdiHeadset,
-    info: [
-      { label: "Thời gian:", value: "8h sáng - 18h tối", icon: mdiClockOutline },
-      { label: "Thứ 2 - Thứ 7", icon: mdiCalendarMonthOutline },
-      { label: "Có hỗ trợ support thêm khi gấp", icon: mdiHeadset }
-    ],
-    bg: "bg-green-600/20",
-    border: "border-green-500/50",
-    image: "/images/demo-4.png"
-  },
-  {
-    title: "ĐỘI NGŨ YOUTUBE INHOUSE",
-    color: "red",
-    icon: mdiYoutube,
-    mainPoint: "ĐIỂM XOÁC ĐẾT LỚN NHẤT",
-    items: [
-      "Chiến lược chiến",
-      "Hướng dẫn kênh lên top 1",
-      "Đồng hành cùng đối tác"
-    ],
-    bg: "bg-red-600/20",
-    border: "border-red-500/50",
-    image: "/images/demo-5.png"
-  }
-];
-
-const resultsImages = [
-  "/images/demo-3.png",
-  "/images/demo-4.png",
-  "/images/demo-5.png",
-  "/images/demo-3.png",
-  "/images/demo-4.png"
-];
+const packageNames: Record<number, string> = {
+  1: "Tool tạo video AI - Gói trải nghiệm 1 tháng 899.000 VNĐ",
+  2: "Tool tạo video AI - Gói kiếm tiền 3 tháng 2.290.000 VNĐ",
+  3: "Tool tạo video AI - Gói đồng hành 6 tháng 4.590.000 VNĐ",
+};
 
 export const AboutAndResults = () => {
-  const [activeResult, setActiveResult] = useState(0);
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  const [showRegistration, setShowRegistration] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", job: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState("");
+
+  const handleRegistrationSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const message = `
+<b>🚀 ĐĂNG KÝ GÓI MỚI - DOLLAR MEDIA</b>
+<b>Gói đăng ký:</b> ${selectedPackage}
+<b>Họ và tên:</b> ${formData.name}
+<b>Số điện thoại:</b> ${formData.phone}
+<b>Email:</b> ${formData.email}
+<b>Công việc:</b> ${formData.job}
+<b>Nguồn:</b> Gói sử dụng - About & Results
+    `;
+
+    try {
+      const token = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
+      const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+      await axios.post(url, {
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'HTML',
+      });
+
+      toast.success("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
+      setShowRegistration(false);
+      setFormData({ name: "", email: "", phone: "", job: "" });
+    } catch (error) {
+      console.error(error);
+      toast.error("Có lỗi xảy ra, vui lòng thử lại sau.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const openRegistration = (num: number) => {
+    setSelectedPackage(packageNames[num]);
+    setShowRegistration(true);
+  };
 
   return (
     <section id="about" className="relative w-full overflow-hidden">
@@ -240,7 +236,10 @@ export const AboutAndResults = () => {
                     className="w-full object-fill h-auto block transition-transform duration-700 border-2 border-accent/30 rounded-3xl"
                   />
                   <div className="flex justify-center w-full">
-                    <GoldButton className="w-full h-[50px] text-sm group">
+                    <GoldButton
+                      className="w-full h-[46px] text-sm group"
+                      onClick={() => openRegistration(num)}
+                    >
                       ĐĂNG KÝ NGAY
                       <Icon path={mdiChevronTripleRight} size={1} className="animate-move-left-right" />
                     </GoldButton>
@@ -250,39 +249,77 @@ export const AboutAndResults = () => {
             ))}
           </div>
         </div>
-
-        {/* SECTION 3: CTA */}
-        {/* <div className="pt-12 border-t border-accent/20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div className="space-y-4">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-5xl font-semibold text-secondary italic leading-tight uppercase"
-              >
-                SẴN SÀNG BỨT PHÁ <br /> DOANH THU CÙNG AI?
-              </motion.h2>
-              <p className="text-white text-lg md:text-xl font-bold italic opacity-80">
-                Tham gia ngay cộng đồng SayMedia để nhận <br className="hidden md:block" /> sự hỗ trợ tốt nhất và kết quả thực chiến!
-              </p>
-            </div>
-
-            <div className="flex justify-center lg:justify-end">
-              <button className="relative px-12 py-8 bg-gradient-to-r from-accent to-[#f4d193] rounded-3xl text-black font-semibold text-xl md:text-3xl shadow-[0_0_50px_rgba(203,155,81,0.5)] hover:scale-105 transition-all group overflow-hidden">
-                <div className="flex flex-col items-center leading-none">
-                  <div className="flex items-center gap-3">
-                    <Icon path={mdiCart} size={1.5} />
-                    MUA NGAY
-                  </div>
-                  <span className="text-xs uppercase mt-2 tracking-widest opacity-80">SỞ HỮU NGAY - TRIỂN KHAI NGAY</span>
-                </div>
-                <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:left-full transition-all duration-1000 ease-in-out"></div>
-              </button>
-            </div>
-          </div>
-        </div> */}
       </div>
+
+      {/* Registration Dialog */}
+      <Dialog open={showRegistration} onOpenChange={setShowRegistration}>
+        <DialogContent size="small">
+          <div className="p-6 space-y-4">
+            <div className="text-center space-y-2">
+              <h2 className="text-3xl font-bold text-secondary">Đăng ký nhận tư vấn</h2>
+              <p className="text-neutral-300 text-sm">Vui lòng để lại thông tin, đội ngũ của chúng tôi sẽ liên hệ với bạn ngay lập tức.</p>
+              <div className="bg-secondary/10 border border-secondary/50 rounded-md p-2 mt-2">
+                <p className="text-secondary text-xs font-bold uppercase">{selectedPackage}</p>
+              </div>
+            </div>
+
+            <form onSubmit={handleRegistrationSubmit} className="space-y-4">
+              <div className="space-y-1">
+                <label className="text-base font-semibold text-secondary ml-1">Họ và tên</label>
+                <input
+                  required
+                  type="text"
+                  placeholder="Nhập họ và tên của bạn"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-base font-semibold text-secondary ml-1">Số điện thoại / Zalo</label>
+                <input
+                  required
+                  type="tel"
+                  placeholder="Nhập số điện thoại của bạn"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-base font-semibold text-secondary ml-1">Email</label>
+                <input
+                  required
+                  type="email"
+                  placeholder="Nhập email của bạn"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
+                />
+              </div>
+              <div className="space-y-1">
+                <label className="text-base font-semibold text-secondary ml-1">Công việc hiện tại</label>
+                <input
+                  required
+                  type="text"
+                  placeholder="Nhập công việc hiện tại của bạn"
+                  value={formData.job}
+                  onChange={(e) => setFormData({ ...formData, job: e.target.value })}
+                  className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
+                />
+              </div>
+              <GoldButton
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full h-12 text-base group disabled:opacity-50"
+              >
+                {isSubmitting ? "ĐANG GỬI..." : "GỬI YÊU CẦU NGAY"}
+                {!isSubmitting && <Icon path={mdiChevronTripleRight} size={0.8} className="animate-move-left-right" />}
+              </GoldButton>
+            </form>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

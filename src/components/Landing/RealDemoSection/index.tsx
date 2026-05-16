@@ -42,6 +42,37 @@ const demoItems = [
 export const RealDemoSection = () => {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
+  const scrollToAutomation = () => {
+    setTimeout(() => {
+      const target = document.getElementById("automation");
+      if (!target) return;
+
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+      const startPosition = window.scrollY;
+      const distance = targetPosition - startPosition;
+      const duration = 800;
+      let start: number | null = null;
+
+      const step = (timestamp: number) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const percentage = Math.min(progress / duration, 1);
+
+        const easing = percentage < 0.5
+          ? 4 * percentage * percentage * percentage
+          : 1 - Math.pow(-2 * percentage + 2, 3) / 2;
+
+        window.scrollTo(0, startPosition + distance * easing);
+
+        if (progress < duration) {
+          window.requestAnimationFrame(step);
+        }
+      };
+
+      window.requestAnimationFrame(step);
+    }, 100);
+  };
+
   return (
     <section id="demo" className="relative overflow-hidden bg-mainBackgroundV1">
       <div className="container mx-auto relative z-10">
@@ -72,8 +103,8 @@ export const RealDemoSection = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors flex items-center justify-center">
-                  <div className="w-14 h-14 rounded-full bg-black/40 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                    <Icon path={mdiPlay} size={1.5} className="text-white ml-1" />
+                  <div className="w-16 h-16 rounded-full bg-black/60 backdrop-blur-md border-2 border-accent flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(203,155,81,0.5)]">
+                    <Icon path={mdiPlay} size={1.5} className="text-secondary" />
                   </div>
                 </div>
               </div>
@@ -98,7 +129,10 @@ export const RealDemoSection = () => {
           ))}
         </div>
         <div className="flex justify-center w-full mt-8">
-          <GoldButton className="w-[250px] h-[50px] text-sm group">
+          <GoldButton
+            className="w-[250px] h-[50px] text-sm group"
+            onClick={scrollToAutomation}
+          >
             XEM TÍNH NĂNG TOOL
             <Icon path={mdiShimmer} size={1} className="animate-shimmer-zoom" />
           </GoldButton>

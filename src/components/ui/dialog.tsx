@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 import { mdiClose } from "@mdi/js";
 import Icon from "@mdi/react";
 
+import Image from "next/image";
+
 const Dialog = DialogPrimitive.Root;
 
 const DialogTrigger = DialogPrimitive.Trigger;
@@ -35,12 +37,13 @@ type DialogSize = "small" | "medium" | "large";
 interface DialogContentProps
   extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {
   size?: DialogSize;
+  backgroundPath?: string;
 }
 
 const getDialogWidth = (size: DialogSize) => {
   switch (size) {
     case "small":
-      return "w-[95vw] md:w-[50vw] md:max-w-[50vw]";
+      return "w-[95vw] md:w-[40vw] md:max-w-[40vw]";
     case "medium":
       return "w-[95vw] md:w-[70vw] md:max-w-[70vw]";
     case "large":
@@ -53,20 +56,35 @@ const getDialogWidth = (size: DialogSize) => {
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   DialogContentProps
->(({ className, children, size = "medium", ...props }, ref) => (
+>(({ className, children, size = "medium", backgroundPath = "/images/black-and-gold-luxury-background2.jpg", ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed left-[50%] top-[50%] z-[900] flex flex-col translate-x-[-50%] translate-y-[-50%] gap-3 md:gap-4 border border-darkBorderV1 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-[8px] md:rounded-[16px] p-0 h-fit min-h-[200px] max-h-[95vh] overflow-y-auto bg-darkBackgroundV1",
+        "fixed left-[50%] top-[50%] z-[900] flex flex-col translate-x-[-50%] translate-y-[-50%] gap-3 md:gap-4 border-2 border-accent/70 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-[24px] md:rounded-[32px] p-0 h-fit min-h-[200px] max-h-[95vh] overflow-y-auto bg-gradient-to-b from-[#7a0101] to-[#4d0301] overflow-hidden",
         getDialogWidth(size),
         className
       )}
       {...props}
     >
-      <div className="flex flex-col w-full h-fit">{children}</div>
-      <DialogPrimitive.Close className="absolute md:right-4 md:top-3 right-3 top-2 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-darkCardV1 data-[state=open]:text-gray-500 bg-darkBackgroundV1 border border-darkBorderV1 rounded-full p-1">
+      {/* Background Pattern */}
+      <Image
+        src={backgroundPath}
+        alt="background pattern"
+        fill
+        className="object-cover opacity-50 -z-10 pointer-events-none mix-blend-soft-light"
+      />
+
+      {/* Border flares */}
+      <div className="absolute top-0 left-2 w-24 h-[1px] bg-gradient-to-r from-transparent via-secondary to-transparent blur-[1px] z-20 opacity-80" />
+      <div className="absolute top-[-2px] left-2 w-1.5 h-1.5 bg-secondary/50 rounded-full shadow-[0_0_15px_5px_rgba(255,255,255,0.8),0_0_30px_10px_rgba(255,255,255,0.2)] z-20" />
+
+      <div className="absolute bottom-0 right-2 w-28 h-[1px] bg-gradient-to-r from-transparent via-secondary to-transparent blur-[1px] z-20 opacity-80" />
+      <div className="absolute bottom-[-2px] right-2 w-1.5 h-1.5 bg-secondary/50 rounded-full shadow-[0_0_15px_5px_rgba(255,255,255,0.8),0_0_30px_10px_rgba(255,255,255,0.2)] z-20" />
+
+      <div className="relative z-10 flex flex-col w-full h-fit">{children}</div>
+      <DialogPrimitive.Close className="absolute md:right-4 md:top-3 right-3 top-2 opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-darkCardV1 data-[state=open]:text-gray-500 bg-black/20 border border-white/10 rounded-full p-1 z-30">
         <Icon path={mdiClose} size={0.8} className="text-neutral-200" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>

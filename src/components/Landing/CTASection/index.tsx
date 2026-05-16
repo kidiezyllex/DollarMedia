@@ -73,7 +73,7 @@ export const CTASection = () => {
               <input
                 type="text"
                 placeholder="Nhập họ và tên của bạn"
-                className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl"
+                className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl placeholder:italic"
               />
             </div>
 
@@ -82,7 +82,25 @@ export const CTASection = () => {
               <input
                 type="tel"
                 placeholder="Nhập số điện thoại để chúng tôi liên hệ"
-                className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl"
+                className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl placeholder:italic"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-xl font-semibold text-accent">Email</label>
+              <input
+                type="email"
+                placeholder="Nhập email của bạn"
+                className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl placeholder:italic"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-xl font-semibold text-accent">Công việc hiện tại</label>
+              <input
+                type="text"
+                placeholder="Nhập công việc hiện tại của bạn"
+                className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl placeholder:italic"
               />
             </div>
 
@@ -93,16 +111,17 @@ export const CTASection = () => {
                   <SelectValue placeholder="Chọn lĩnh vực bạn quan tâm" />
                 </SelectTrigger>
                 <SelectContent className="bg-neutral-900 border-accent/50 text-white">
-                  <SelectItem value="tiktok">Tạo video TikTok / Shorts</SelectItem>
-                  <SelectItem value="youtube">Xây dựng kênh Youtube Automation</SelectItem>
-                  <SelectItem value="multichannel">Tự động hoá nội dung đa kênh</SelectItem>
+                  <SelectItem value="tiktok">Youtube</SelectItem>
+                  <SelectItem value="youtube">TikTok/Facebook/Reels</SelectItem>
+                  <SelectItem value="multichannel">Affiliate</SelectItem>
+                  <SelectItem value="multichannel">Cả 3</SelectItem>
                   <SelectItem value="other">Khác</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="pt-4">
-              <GoldButton className="w-full h-14 text-lg group">
+              <GoldButton className="w-full h-16 text-lg group">
                 GỬI YÊU CẦU NGAY
                 <Icon path={mdiSend} size={1} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </GoldButton>
