@@ -56,7 +56,7 @@ export const YouAreCurrentlySection = () => {
                             className="border-2 border-accent/30 rounded-2xl p-4 hover:border-accent transition-all duration-500 group relative cursor-pointer overflow-hidden bg-gradient-to-r from-accent/5 via-accent/10 to-accent/5"
                         >
                             <Image
-                                src="/images/magical-celestial-interstellar-frame.jpg"
+                                src="/images/magical-celestial-interstellar-frame.webp"
                                 alt="background"
                                 fill
                                 className="object-cover opacity-20 -z-10 transition-all duration-700 scale-[1.4]"

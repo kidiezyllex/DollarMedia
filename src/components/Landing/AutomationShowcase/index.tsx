@@ -64,7 +64,7 @@ export const AutomationShowcase = () => {
       </PremiumHeader>
       {/* BOTTOM SECTION: VIDEO DEMO */}
       <div className="mx-auto container">
-        <PremiumCard backgroundPath="/images/black-and-gold-luxury-background2.jpg" className="p-6">
+        <PremiumCard backgroundPath="/images/black-and-gold-luxury-background2.webp" className="p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             {/* Left: Video Placeholder */}
             <div className="space-y-4">

@@ -41,7 +41,7 @@ function InternalHeader({ toggle, isOpen }: { toggle: () => void, isOpen: boolea
           <Icon path={mdiMenu} size={1} />
         </Button>
         <Link href="/" className="flex items-center">
-          <Image src="/images/primary-logo.png" width={150} height={40} alt="Logo" className="h-8 w-auto" />
+          <Image src="/images/primary-logo.webp" width={150} height={40} alt="Logo" className="h-8 w-auto" />
         </Link>
       </div>
 
@@ -278,7 +278,7 @@ function MobileLayout({ children, isOpen, toggle }: { children: React.ReactNode,
           className="!inset-x-auto !inset-y-0 !left-0 !right-auto !mt-0 !rounded-none !rounded-r-2xl w-[280px] h-full border-r border-darkBorderV1 bg-darkCardV1 flex flex-col p-0 [&>div:first-child]:hidden"
         >
           <div className="p-4 border-b border-darkBorderV1 flex items-center justify-center">
-            <Image src="/images/primary-logo.png" width={200} height={100} alt="Logo" className="h-10 w-auto" />
+            <Image src="/images/primary-logo.webp" width={200} height={100} alt="Logo" className="h-10 w-auto" />
           </div>
 
           <nav className="flex-1 overflow-y-auto p-4 space-y-2">

@@ -56,7 +56,7 @@ const getDialogWidth = (size: DialogSize) => {
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   DialogContentProps
->(({ className, children, size = "medium", backgroundPath = "/images/black-and-gold-luxury-background2.jpg", ...props }, ref) => (
+>(({ className, children, size = "medium", backgroundPath = "/images/black-and-gold-luxury-background2.webp", ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />
     <DialogPrimitive.Content

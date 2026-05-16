@@ -41,7 +41,7 @@ export const HeroSection = () => {
     <section id="hero" className="relative flex flex-col items-center justify-center overflow-hidden">
       <div className="w-full z-0">
         <Image
-          src="/images/hero-background2.png"
+          src="/images/hero-background.webp"
           alt="Background"
           width={1920}
           height={1080}

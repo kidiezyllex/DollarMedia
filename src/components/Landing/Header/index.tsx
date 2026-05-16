@@ -3,7 +3,7 @@
 import CyberButton from "@/components/ui/CyberButton";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Dropdown, Trigger, TriggerWrapper } from "@/components/ui/dropdown";
-import { mdiFormatListBulletedType, mdiMenu } from "@mdi/js";
+import { mdiMenu } from "@mdi/js";
 import Icon from "@mdi/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -16,27 +16,6 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const getCategoryIcon = (slug: string, apiIcon?: string) => {
-    if (apiIcon) {
-      return <img src={apiIcon} alt={slug} className="w-full h-full object-contain" />;
-    }
-
-    const iconMap: Record<string, string> = {
-      'chatgpt': '/images/logo/ChatGPT.png',
-      'gemini': '/images/logo/Gemini.png',
-      'grok': '/images/logo/Grok.png',
-      'capcut': '/images/logo/Capcut.png',
-      'vpn-proxy': '/images/logo/VPN.png',
-      'premium-key': '/images/logo/Key.png',
-    };
-
-    if (iconMap[slug]) {
-      return <img src={iconMap[slug]} alt={slug} className="w-full h-full object-contain" />;
-    }
-
-    return <Icon path={mdiFormatListBulletedType} size={1} className="text-neutral-400" />;
-  };
 
   return (
     <>

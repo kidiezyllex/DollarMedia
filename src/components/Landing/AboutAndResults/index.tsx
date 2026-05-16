@@ -24,7 +24,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
-const slideImages = Array.from({ length: 11 }, (_, i) => `/images/slides/slide${i + 1}.jpg`);
+const slideImages = Array.from({ length: 11 }, (_, i) => `/images/slides/slide${i + 1}.webp`);
 
 const packageNames: Record<number, string> = {
   1: "Tool tạo video AI - Gói trải nghiệm 1 tháng 899.000 VNĐ",
@@ -92,7 +92,7 @@ export const AboutAndResults = () => {
           <div className="space-y-4 w-[40%] ">
             {/* About us Image here */}
             <Image
-              src="/images/about-us.png"
+              src="/images/about-us.webp"
               alt="About Us"
               width={1200}
               height={1200}
@@ -206,7 +206,7 @@ export const AboutAndResults = () => {
         </div>
         <div className="relative pb-8 pt-1">
           <Image
-            src="/images/black-and-gold-luxury-background2.jpg"
+            src="/images/black-and-gold-luxury-background2.webp"
             alt="background"
             fill
             className="object-fill w-full opacity-20 -z-10"
@@ -229,7 +229,7 @@ export const AboutAndResults = () => {
               >
                 <div className="relative w-full h-auto space-y-4">
                   <Image
-                    src={`/images/packages/package${num}.jpg`}
+                    src={`/images/packages/package${num}.webp`}
                     alt={`Package ${num}`}
                     width={800}
                     height={1200}

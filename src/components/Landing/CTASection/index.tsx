@@ -48,7 +48,7 @@ export const CTASection = () => {
         {/* Background Image - relative to define section height */}
         <div className="relative w-full z-0">
           <Image
-            src="/images/cta-bckground.png"
+            src="/images/cta-bckground.webp"
             alt="CTA Background"
             width={1920}
             height={600}

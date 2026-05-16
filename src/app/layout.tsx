@@ -11,39 +11,14 @@ const lexend = Lexend({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dollar Media - Giải Pháp & Tài Nguyên AI Chuyên Nghiệp',
+    default: 'Dollar Media - Công cụ AI Tạo Video Tự Động Chuyên Nghiệp',
     template: '%s | Dollar Media'
   },
-  description: 'Dollar Media chuyên cung cấp tài nguyên AI hàng đầu: Tài khoản ChatGPT Plus, Gemini Advanced, Key Windows 11/10 Pro, Office 365 bản quyền, VPN giá rẻ (NordVPN, ExpressVPN). Uy tín, bảo hành 1 đổi 1, hỗ trợ 24/7.',
+  description: 'Dollar Media - Giải pháp tự động hóa nội dung bằng AI. Tạo video TikTok, Shorts, Youtube Automation chuyên nghiệp chỉ trong vài phút. Bứt phá doanh thu và tiết kiệm thời gian với hệ thống AI tiên tiến nhất.',
   keywords: [
-    // Thương hiệu & chung
-    'Dollar Media', 'mdpremium.com.vn', 'mdpremium.com.vn', 'tài khoản premium giá rẻ', 'mua tài khoản giá rẻ',
-    'bán key bản quyền', 'phần mềm giá rẻ', 'shop tài khoản uy tín', 'bảo hành 1 đổi 1', 'tài khoản vip',
-
-    // Trí tuệ nhân tạo (AI)
-    'Tài nguyên AI', 'Mua tài khoản ChatGPT Plus', 'Nâng cấp ChatGPT Plus', 'Tài khoản ChatGPT giá rẻ',
-    'Mua tài khoản Gemini Advanced', 'Tài khoản Claude Pro', 'Tài khoản Midjourney', 'Midjourney giá rẻ',
-    'Tài khoản Poe Premium', 'Copilot Pro bản quyền', 'OpenAI API key',
-
-    // Windows & Office (Phần mềm công việc)
-    'Mua key Windows 11 Pro bản quyền', 'Key Windows 10 Pro', 'Key Windows 11 Home',
-    'Mua key Office 365 giá rẻ', 'Key Office 2021 Professional Plus', 'Key Office 2019',
-    'Tài khoản Microsoft 365', 'Bản quyền Windows vĩnh viễn', 'Active Windows',
-
-    // Công cụ làm việc & Học tập
-    'Tài khoản Canva Pro', 'Nâng cấp Canva Pro chính chủ', 'Tài khoản Grammarly Premium',
-    'Tài khoản Zoom Pro', 'Zoom không giới hạn', 'Google Drive Unlimited', 'Google One giá rẻ',
-    'Tài khoản Duolingo Super', 'Tài khoản Elsa Speak Pro', 'Adobe Creative Cloud bản quyền',
-    'Tài khoản Freepik Premium', 'Envato Elements giá rẻ',
-
-    // Giải trí & Truyền hình
-    'Tài khoản Netflix Premium', 'Mua Netflix giá rẻ', 'Spotify Premium', 'Nâng cấp Spotify chính chủ',
-    'YouTube Premium giá rẻ', 'YouTube không quảng cáo', 'Tài khoản Disney+', 'Tài khoản VieON VIP',
-    'Tài khoản FPT Play', 'Tài khoản K+', 'Tài khoản Crunchyroll', 'Tài khoản HBO Max',
-
-    // Mạng riêng ảo (VPN) & Bảo mật
-    'VPN giá rẻ', 'Tài khoản NordVPN', 'Mua ExpressVPN', 'Tài khoản Surfshark VPN',
-    'Tài khoản CyberGhost', 'HMA VPN', 'Key Kaspersky Internet Security', 'Phần mềm diệt virus bản quyền'
+    'Dollar Media', 'Furycore', 'tạo video ai', 'ai video automation', 'tự động hóa nội dung',
+    'kiếm tiền youtube automation', 'tạo video tiktok ai', 'tạo video shorts ai',
+    'công cụ làm video tự động', 'ai content creator', 'hệ thống tạo video hàng loạt'
   ],
   authors: [{ name: 'Dollar Media', url: 'https://mdpremium.com.vn' }],
   creator: 'Dollar Media',
@@ -58,16 +33,16 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Dollar Media - Giải Pháp & Tài Nguyên AI Chuyên Nghiệp',
-    description: 'Nâng tầm công việc với tài khoản ChatGPT Plus, Gemini Advanced, phần mềm bản quyền Windows/Office, và dịch vụ giải trí Premium giá tốt nhất thị trường.',
+    title: 'Dollar Media - Công cụ AI Tạo Video Tự Động Chuyên Nghiệp',
+    description: 'Tạo video TikTok, Shorts, Youtube Automation chuyên nghiệp chỉ trong vài phút với công nghệ AI hàng đầu từ Dollar Media.',
     url: 'https://mdpremium.com.vn',
     siteName: 'Dollar Media',
     images: [
       {
-        url: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1777280469/background_ohy2um.png',
+        url: 'https://res.cloudinary.com/drqbhj6ft/image/upload/v1778913017/hero-background_larfc0.webp',
         width: 1200,
         height: 630,
-        alt: 'Dollar Media - Cung cấp tài nguyên công nghệ',
+        alt: 'Dollar Media - AI Video Automation',
       },
     ],
     locale: 'vi_VN',
@@ -75,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dollar Media - Tài Nguyên AI & Phần Mềm Bản Quyền',
-    description: 'Khám phá ngay các dịch vụ AI, VPN, bản quyền Windows, Office và tài khoản giải trí Premium ưu đãi nhất tại Dollar Media.',
-    images: ['https://res.cloudinary.com/drqbhj6ft/image/upload/v1777280469/background_ohy2um.png'],
+    title: 'Dollar Media - Công cụ AI Tạo Video Tự Động',
+    description: 'Giải pháp bứt phá doanh thu với hệ thống tạo video TikTok, Youtube Automation tự động bằng AI.',
+    images: ['https://res.cloudinary.com/drqbhj6ft/image/upload/v1778913017/hero-background_larfc0.webp'],
   },
   robots: {
     index: true,
@@ -91,7 +66,19 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-  }
+  },
+  icons: {
+    icon: [
+      { url: '/favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/favicon/apple-touch-icon.png' },
+    ],
+  },
+  manifest: '/favicon/site.webmanifest',
 };
 
 import { LandingLayout } from '@/components/layout/LandingLayout';

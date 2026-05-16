@@ -13,7 +13,7 @@ export const AIGenerateToolSection = () => {
                 AI GENERATE TOOL
             </PremiumHeader>
             <div className="container mx-auto">
-                <PremiumCard backgroundPath="/images/black-and-gold-luxury-background.jpg">
+                <PremiumCard backgroundPath="/images/black-and-gold-luxury-background.webp">
                     <div className="p-6">
                         <div className="grid grid-cols-2 items-start gap-6">
                             {/* Left Info */}
@@ -60,7 +60,7 @@ export const AIGenerateToolSection = () => {
                                     className="relative rounded-3xl overflow-hidden"
                                 >
                                     <Image
-                                        src="/images/day-khong-chi-la-tool-tao-video.jpg"
+                                        src="/images/day-khong-chi-la-tool-tao-video.webp"
                                         alt="Đây không chỉ là tool tạo video"
                                         width={1000}
                                         height={600}
