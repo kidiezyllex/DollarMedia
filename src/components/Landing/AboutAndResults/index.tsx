@@ -24,7 +24,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
-const slideImages = Array.from({ length: 11 }, (_, i) => `/images/slides/slide${i + 1}.webp`);
+const slideImages = Array.from({ length: 14 }, (_, i) => `/images/slides/slide${i + 1}.webp`);
 
 const packageNames: Record<number, string> = {
   1: "Tool tạo video AI - Gói trải nghiệm 1 tháng 899.000 VNĐ",
