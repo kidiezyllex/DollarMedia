@@ -20,6 +20,7 @@ import { Autoplay, FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
+import Link from "next/link";
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
@@ -130,7 +131,16 @@ export const AboutAndResults = () => {
                 </motion.div>
               ))}
             </div>
-
+            <div className="w-full mt-4 flex justify-center">
+              <Link href="https://zalo.me/g/ake1jadogzfsxu8ntdkd" target="_blank">
+                <GoldButton
+                  className="w-[310px] h-[50px] text-sm group"
+                >
+                  Tham gia cộng đồng Dollar Media
+                  <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} />
+                </GoldButton>
+              </Link>
+            </div>
           </div>
 
           {/* Right: Team Showcase */}

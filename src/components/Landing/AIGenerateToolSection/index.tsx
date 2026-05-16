@@ -1,10 +1,12 @@
 "use client"
+import GoldButton from "@/components/ui/GoldButton";
 import PremiumCard from "@/components/ui/PremiumCard";
 import PremiumHeader from "@/components/ui/PremiumHeader";
 import { mdiCheckDecagram } from "@mdi/js";
 import Icon from "@mdi/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export const AIGenerateToolSection = () => {
     return (
@@ -27,7 +29,6 @@ export const AIGenerateToolSection = () => {
                                         Đây không chỉ là tool tạo video. Đây là hạ tầng AI Automation giúp:
                                     </p>
                                 </motion.div>
-
                                 <div className="space-y-4">
                                     {[
                                         "Kết nối nhiều AI + nhiều công cụ + nhiều nền tảng",
@@ -49,6 +50,16 @@ export const AIGenerateToolSection = () => {
                                             <span className="text-neutral-200 font-medium">{item}</span>
                                         </motion.div>
                                     ))}
+                                </div>
+                                <div className="w-full mt-4 flex justify-center">
+                                    <Link href="https://zalo.me/g/ake1jadogzfsxu8ntdkd" target="_blank">
+                                        <GoldButton
+                                            className="w-[310px] h-[50px] text-sm group"
+                                        >
+                                            Tham gia cộng đồng Dollar Media
+                                            <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} />
+                                        </GoldButton>
+                                    </Link>
                                 </div>
                             </div>
                             {/* Right Graphic (Workflow Visualization) */}

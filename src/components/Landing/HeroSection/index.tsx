@@ -1,9 +1,8 @@
 "use client";
 
 import GoldButton from "@/components/ui/GoldButton";
-import { mdiChevronDoubleDown } from "@mdi/js";
-import Icon from "@mdi/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const HeroSection = () => {
   const scrollToDemo = () => {
@@ -51,13 +50,14 @@ export const HeroSection = () => {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <GoldButton
-          className="w-[200px] h-[50px] text-sm group"
-          onClick={scrollToDemo}
-        >
-          XEM DEMO TOOL
-          <Icon path={mdiChevronDoubleDown} size={1} className="animate-shimmer-zoom" />
-        </GoldButton>
+        <Link href="https://zalo.me/g/ake1jadogzfsxu8ntdkd" target="_blank">
+          <GoldButton
+            className="w-[310px] h-[50px] text-sm group"
+          >
+            Tham gia cộng đồng Dollar Media
+            <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} />
+          </GoldButton>
+        </Link>
       </div>
     </section>
   );
