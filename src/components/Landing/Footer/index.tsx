@@ -25,7 +25,7 @@ export const Footer = () => {
           src="/images/magical-celestial-interstellar-frame.webp"
           alt="background"
           fill
-          className="object-cover opacity-10 scale-110"
+          className="object-cover opacity-10 scale-150 md:scale-110"
         />
       </div>
       {/* Barcode Deco */}
@@ -40,15 +40,15 @@ export const Footer = () => {
       </div>
 
       <div className="container px-4 mx-auto sm:px-4 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-1 md:col-span-2 space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
+          <div className="col-span-1 lg:col-span-2 space-y-2">
             <div className="flex gap-2 items-center">
               <div className="flex items-center gap-2">
-                <img draggable={false} src="/images/primary-logo.png" alt={SHOP_INFO.name} className="h-20 w-20 object-contain" />
+                <img draggable={false} src="/images/primary-logo.png" alt={SHOP_INFO.name} className="lg:h-20 lg:w-20 w-14 h-14 object-contain flex-shrink-0" />
               </div>
               <Link href="https://zalo.me/g/ake1jadogzfsxu8ntdkd" target="_blank">
                 <GoldButton
-                  className="w-[310px] h-[50px] text-sm group"
+                  className="w-[290px] lg:w-[310px] h-[50px] text-sm group"
                 >
                   Tham gia cộng đồng Dollar Media
                   <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} />
@@ -60,7 +60,7 @@ export const Footer = () => {
             </p>
           </div>
 
-          <div>
+          <div className="lg:block hidden">
             <h4 className="text-secondary font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Liên kết nhanh</h4>
             <ul className="space-y-3 text-sm text-neutral-400">
               <li><Link href="#hero" className="hover:text-secondary hover:underline transition-colors text-base inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Trang Chủ</Link></li>

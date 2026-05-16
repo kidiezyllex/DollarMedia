@@ -16,8 +16,8 @@ export const AIGenerateTool = () => {
             </PremiumHeader>
             <div className="container px-4 mx-auto">
                 <PremiumCard backgroundPath="/images/black-and-gold-luxury-background.webp">
-                    <div className="p-6">
-                        <div className="grid grid-cols-2 items-start gap-6">
+                    <div className="p-4 md:p-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-6">
                             {/* Left Info */}
                             <div className="space-y-4">
                                 <motion.div

@@ -80,7 +80,7 @@ export const RealDemo = () => {
           DEMO THỰC TẾ
         </PremiumHeader>
 
-        <div className="grid grid-cols-2 gap-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 w-full">
           {demoItems.map((item, index) => (
             <PremiumCard
               backgroundPath="/images/halftone-dot-field-graphic-print.webp"

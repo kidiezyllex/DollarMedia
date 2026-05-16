@@ -64,7 +64,7 @@ export const AutomationShowcase = () => {
       </PremiumHeader>
       {/* BOTTOM SECTION: VIDEO DEMO */}
       <div className="mx-auto container">
-        <PremiumCard backgroundPath="/images/black-and-gold-luxury-background2.webp" className="p-6">
+        <PremiumCard backgroundPath="/images/black-and-gold-luxury-background2.webp" className="p-4 md:p-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
             {/* Left: Video Placeholder */}
             <div className="space-y-4">
@@ -86,7 +86,7 @@ export const AutomationShowcase = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-8 p-3 rounded-xl border border-dashed border-secondary/50 bg-gradient-to-r from-secondary/5 via-secondary/10 to-secondary/5 flex items-center justify-between gap-2">
+              <div className="mt-8 p-3 rounded-xl border border-dashed border-secondary/50 bg-gradient-to-r from-secondary/5 via-secondary/10 to-secondary/5 flex items-center gap-2">
                 <div className="bg-secondary rounded-full p-1 flex-shrink-0">
                   <Icon path={mdiYoutube} size={0.8} className="text-black" />
                 </div>
@@ -154,7 +154,7 @@ export const AutomationShowcase = () => {
       {/* Registration Dialog */}
       <Dialog open={showRegistration} onOpenChange={setShowRegistration}>
         <DialogContent size="small">
-          <div className="p-6 space-y-4">
+          <div className="p-4 md:p-6 space-y-4">
             <div className="text-center space-y-2">
               <h2 className="text-3xl font-bold text-secondary">Đăng ký nhận tư vấn</h2>
               <p className="text-neutral-300 text-sm">Vui lòng để lại thông tin, đội ngũ của chúng tôi sẽ liên hệ với bạn ngay lập tức.</p>

@@ -87,9 +87,9 @@ export const AboutAndResults = () => {
       </PremiumHeader>
       <div className="relative z-10 mx-auto container px-4">
         {/* SECTION 1: ABOUT US */}
-        <div className="flex items-start gap-6 border-2 border-accent/30 rounded-3xl p-6 relative overflow-hidden group">
+        <div className="flex lg:flex-row flex-col items-start gap-6 border-2 border-accent/30 rounded-3xl p-4 md:p-6 relative overflow-hidden group">
           {/* Left Info */}
-          <div className="space-y-4 w-[40%]">
+          <div className="space-y-4 lg:w-[40%] w-full">
             {/* About us Image here */}
             <Image
               src="/images/about-us.webp"
@@ -104,7 +104,7 @@ export const AboutAndResults = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <p className="text-secondary text-lg font-semibold">
+              <p className="text-secondary text-lg font-semibold lg:text-start text-center">
                 Chúng tôi xây dựng Dollar Media với mục tiêu:
               </p>
             </motion.div>
@@ -143,7 +143,7 @@ export const AboutAndResults = () => {
             </div>
           </div>
           {/* Right: Team Showcase */}
-          <div className="space-y-4 w-[60%]">
+          <div className="space-y-4 lg:w-[60%] w-full">
             <p className="text-secondary text-lg font-semibold">
               Một vài kết quả của ae đã đồng hành với bên mình sau 2 tháng triển khai đúng quy trình:
             </p>
@@ -223,7 +223,7 @@ export const AboutAndResults = () => {
         <PremiumHeader>
           GÓI SỬ DỤNG
         </PremiumHeader>
-        <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-4 mx-auto container">
+        <div className="grid grid-cols-1 md:grid-cols-[0.9fr_1.2fr_0.9fr] items-center gap-4 mx-auto container px-4">
           {[1, 2, 3].map((num) => (
             <motion.div
               key={num}
@@ -262,7 +262,7 @@ export const AboutAndResults = () => {
       {/* Registration Dialog */}
       <Dialog open={showRegistration} onOpenChange={setShowRegistration}>
         <DialogContent size="small">
-          <div className="p-6 space-y-4">
+          <div className="p-4 md:p-6 space-y-4">
             <div className="text-center space-y-2">
               <h2 className="text-3xl font-bold text-secondary">Đăng ký nhận tư vấn</h2>
               <p className="text-neutral-300 text-sm">Vui lòng để lại thông tin, đội ngũ của chúng tôi sẽ liên hệ với bạn ngay lập tức.</p>
