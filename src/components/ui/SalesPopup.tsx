@@ -75,18 +75,25 @@ export function SalesPopup() {
       className={`fixed bottom-4 left-4 z-[100] max-w-[320px] bg-[#0a0a0a] border border-neutral-800 rounded-lg shadow-2xl p-3 flex items-start gap-3 transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0 pointer-events-none"
         }`}
     >
-      <div className="flex-shrink-0 mt-0.5">
-        <Icon path={mdiCheckDecagram} size={1} className="text-[#10B981]" />
-      </div>
-      <div className="flex-1">
-        <div className="text-sm">
-          <span className="font-semibold text-white">{currentSale.name}</span>
-          <span className="text-neutral-400"> đã mua </span>
+      <div className="relative flex-shrink-0 mt-0.5">
+        <img
+          src={`https://picsum.photos/100/100?random=${encodeURIComponent(currentSale.name)}`}
+          alt={currentSale.name}
+          className="w-10 h-10 rounded-full object-cover border border-neutral-800"
+        />
+        <div className="absolute -bottom-1 -right-1 bg-[#0a0a0a] rounded-full p-0.5 border border-neutral-800">
+          <Icon path={mdiCheckDecagram} size={0.5} className="text-[#10B981]" />
         </div>
-        <div className="text-sm font-medium text-secondary mt-0.5 leading-tight">
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="text-sm leading-snug">
+          <span className="font-semibold text-white">{currentSale.name}</span>
+          <span className="text-neutral-400 text-xs"> đã mua </span>
+        </div>
+        <div className="text-xs font-semibold text-secondary mt-0.5 leading-tight">
           {currentSale.product}
         </div>
-        <div className="text-sm italic text-neutral-400 mt-1">
+        <div className="text-xs italic text-neutral-400 mt-1">
           {currentSale.time}
         </div>
       </div>

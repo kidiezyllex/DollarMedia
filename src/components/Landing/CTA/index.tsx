@@ -82,7 +82,7 @@ const CTADesktop = ({
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/10 blur-[100px] rounded-full" />
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <label className="text-xl font-semibold text-secondary">Họ và tên</label>
+                <label className="text-xl font-semibold text-secondary">Họ và tên <span className="text-red-500">(*)</span></label>
                 <input
                   required
                   type="text"
@@ -94,7 +94,7 @@ const CTADesktop = ({
               </div>
 
               <div className="space-y-2">
-                <label className="text-xl font-semibold text-secondary">Số điện thoại / Zalo</label>
+                <label className="text-xl font-semibold text-secondary">Số điện thoại / Zalo <span className="text-red-500">(*)</span></label>
                 <input
                   required
                   type="tel"
@@ -108,9 +108,8 @@ const CTADesktop = ({
               <div className="space-y-2">
                 <label className="text-xl font-semibold text-secondary">Email</label>
                 <input
-                  required
                   type="email"
-                  placeholder="Nhập email của bạn"
+                  placeholder="Nhập email của bạn (không bắt buộc)"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-white/5 border rounded-xl p-4 text-white placeholder:text-neutral-300 focus:outline-none border-accent/50 transition-colors text-xl placeholder:italic"
@@ -182,13 +181,13 @@ const CTAMobile = ({
     <div className="block lg:hidden bg-mainBackgroundV1 py-12 px-4 border-t-2 border-accent/30">
       <div className="max-w-md mx-auto space-y-6">
         <div className="text-center space-y-2">
-          <h2 className="text-3xl font-bold text-secondary uppercase">Đăng ký nhận tư vấn</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-secondary">Đăng ký nhận tư vấn</h2>
           <p className="text-neutral-300 text-sm">Vui lòng để lại thông tin, chúng tôi sẽ liên hệ ngay.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="space-y-2">
-            <label className="text-base font-semibold text-secondary ml-1">Họ và tên</label>
+            <label className="text-base font-semibold text-secondary ml-1">Họ và tên <span className="text-red-500">(*)</span></label>
             <input
               required
               type="text"
@@ -200,7 +199,7 @@ const CTAMobile = ({
           </div>
 
           <div className="space-y-2">
-            <label className="text-base font-semibold text-secondary ml-1">Số điện thoại / Zalo</label>
+            <label className="text-base font-semibold text-secondary ml-1">Số điện thoại / Zalo <span className="text-red-500">(*)</span></label>
             <input
               required
               type="tel"
@@ -214,9 +213,8 @@ const CTAMobile = ({
           <div className="space-y-2">
             <label className="text-base font-semibold text-secondary ml-1">Email</label>
             <input
-              required
               type="email"
-              placeholder="Nhập email của bạn"
+              placeholder="Nhập email của bạn (không bắt buộc)"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-400 focus:outline-none border-accent/50 transition-colors text-base placeholder:italic"
@@ -299,7 +297,7 @@ export const CTA = () => {
 
 <b>Họ và tên:</b> ${formData.name}
 <b>Số điện thoại:</b> ${formData.phone}
-<b>Email:</b> ${formData.email}
+<b>Email:</b> ${formData.email || "Không cung cấp"}
     `;
 
     try {

@@ -5,6 +5,13 @@ import PremiumCard from "@/components/ui/PremiumCard";
 import PremiumHeader from "@/components/ui/PremiumHeader";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   mdiCheckDecagram,
   mdiChevronTripleRight,
   mdiPlay,
@@ -17,21 +24,25 @@ import { toast } from "react-toastify";
 export const AutomationShowcase = () => {
   const [showVideo, setShowVideo] = useState(false);
   const [showRegistration, setShowRegistration] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", job: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", platform: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const videoUrl = "https://6b1c8wz28p.ufs.sh/f/j96j2uSUbsVoephVBqxdNkIo2y0YRuQaOTBVnwz9Etf5XHhc";
 
   const handleRegistrationSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.platform) {
+      toast.warning("Vui lòng chọn nền tảng làm video.");
+      return;
+    }
     setIsSubmitting(true);
 
     const message = `
 <b>🚀 ĐĂNG KÝ MỚI TỪ LANDING PAGE DOLLAR MEDIA</b>
 <b>Họ và tên:</b> ${formData.name}
-<b>Email:</b> ${formData.email}
+<b>Email:</b> ${formData.email || "Không cung cấp"}
 <b>Số điện thoại:</b> ${formData.phone}
-<b>Công việc:</b> ${formData.job}
+<b>Nền tảng làm video:</b> ${formData.platform}
 <b>Nguồn:</b> Khách đã nhấn đăng ký từ phần "Tính năng Tool ~ Công cụ AI tạo video tự động"
     `;
 
@@ -48,7 +59,7 @@ export const AutomationShowcase = () => {
 
       toast.success("Đăng ký thành công! Chúng tôi sẽ liên hệ sớm.");
       setShowRegistration(false);
-      setFormData({ name: "", email: "", phone: "", job: "" });
+      setFormData({ name: "", email: "", phone: "", platform: "" });
     } catch (error) {
       console.error(error);
       toast.error("Có lỗi xảy ra, vui lòng thử lại sau.");
@@ -91,7 +102,7 @@ export const AutomationShowcase = () => {
                   <Icon path={mdiYoutube} size={0.8} className="text-black" />
                 </div>
                 <p className="text-secondary text-sm font-semibold text-start">
-                  Video chia sẻ tính năng tool, hãy dành ra 8 phút để hiểu chi tiết về tool nha!
+                  Video chia sẻ tính năng tool, hãy dành ra 8 phút to hiểu chi tiết về tool nha!
                 </p>
               </div>
             </div>
@@ -156,13 +167,13 @@ export const AutomationShowcase = () => {
         <DialogContent size="small">
           <div className="p-4 md:p-6 space-y-4">
             <div className="text-center space-y-2">
-              <h2 className="text-3xl font-bold text-secondary">Đăng ký nhận tư vấn</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary">Đăng ký nhận tư vấn</h2>
               <p className="text-neutral-300 text-sm">Vui lòng để lại thông tin, đội ngũ của chúng tôi sẽ liên hệ với bạn ngay lập tức.</p>
             </div>
 
             <form onSubmit={handleRegistrationSubmit} className="space-y-4">
               <div className="space-y-1">
-                <label className="text-base font-semibold text-secondary ml-1">Họ và tên</label>
+                <label className="text-base font-semibold text-secondary ml-1">Họ và tên <span className="text-red-500">(*)</span></label>
                 <input
                   required
                   type="text"
@@ -173,7 +184,7 @@ export const AutomationShowcase = () => {
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-base font-semibold text-secondary ml-1">Số điện thoại / Zalo</label>
+                <label className="text-base font-semibold text-secondary ml-1">Số điện thoại / Zalo <span className="text-red-500">(*)</span></label>
                 <input
                   required
                   type="tel"
@@ -186,24 +197,28 @@ export const AutomationShowcase = () => {
               <div className="space-y-1">
                 <label className="text-base font-semibold text-secondary ml-1">Email</label>
                 <input
-                  required
                   type="email"
-                  placeholder="Nhập email của bạn"
+                  placeholder="Nhập email của bạn (không bắt buộc)"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
                 />
               </div>
               <div className="space-y-1">
-                <label className="text-base font-semibold text-secondary ml-1">Công việc hiện tại</label>
-                <input
-                  required
-                  type="text"
-                  placeholder="Nhập công việc hiện tại của bạn"
-                  value={formData.job}
-                  onChange={(e) => setFormData({ ...formData, job: e.target.value })}
-                  className="w-full bg-white/5 border rounded-xl p-3 text-white placeholder:text-neutral-300 focus:outline-none border-secondary/50 transition-colors text-sm placeholder:italic"
-                />
+                <label className="text-base font-semibold text-secondary ml-1">Đang làm video ở nền tảng</label>
+                <Select
+                  value={formData.platform}
+                  onValueChange={(val) => setFormData({ ...formData, platform: val })}
+                >
+                  <SelectTrigger className="w-full bg-white/5 border border-secondary/50 rounded-xl p-3 text-white text-sm font-normal h-11 flex items-center justify-between">
+                    <SelectValue placeholder="Chọn nền tảng" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Facebook">Facebook</SelectItem>
+                    <SelectItem value="Youtube">Youtube</SelectItem>
+                    <SelectItem value="Tiktok">Tiktok</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <GoldButton
                 type="submit"
