@@ -138,6 +138,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
         />
+        {/* Facebook Pixel */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '964945739485650');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=964945739485650&ev=PageView&noscript=1" />`,
+          }}
+        />
       </head>
       <body className={cn(lexend.className, "bg-[#050505] text-white selection:bg-primary/30 selection:text-secondary")} suppressHydrationWarning>
         <NextTopLoader
