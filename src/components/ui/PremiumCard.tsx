@@ -33,7 +33,9 @@ const PremiumCard: React.FC<PremiumCardProps> = ({
         src={backgroundPath}
         alt="background pattern"
         fill
+        loading="lazy"
         className="object-cover opacity-70 -z-10 pointer-events-none mix-blend-soft-light"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 80vw"
       />
 
       {/* Border flares */}

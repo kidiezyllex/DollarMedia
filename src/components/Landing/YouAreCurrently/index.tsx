@@ -54,8 +54,9 @@ const YouAreCurrentlyDesktop = () => {
                             src="/images/magical-celestial-interstellar-frame.webp"
                             alt="background"
                             fill
+                            loading="lazy"
                             className="object-cover opacity-20 -z-10 transition-all duration-700 scale-[1.4]"
-                            sizes="100vw"
+                            sizes="(max-width: 1024px) 100vw, 33vw"
                         />
                         <div className="flex items-center gap-2 mb-2">
                             <div className="bg-secondary rounded-full p-1 flex-shrink-0">
@@ -95,6 +96,7 @@ const YouAreCurrentlyMobile = () => {
                             src="/images/magical-celestial-interstellar-frame.webp"
                             alt="background"
                             fill
+                            loading="lazy"
                             className="object-cover opacity-20 -z-10"
                             sizes="100vw"
                         />

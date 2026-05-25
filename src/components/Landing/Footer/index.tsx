@@ -25,7 +25,9 @@ export const Footer = () => {
           src="/images/magical-celestial-interstellar-frame.webp"
           alt="background"
           fill
+          loading="lazy"
           className="object-cover opacity-10 scale-150 md:scale-110"
+          sizes="100vw"
         />
       </div>
       {/* Barcode Deco */}

@@ -102,7 +102,7 @@ const AboutAndResultsDesktop = ({ thumbsSwiper, setThumbsSwiper, openRegistratio
                   className="w-[310px] h-[50px] text-sm group"
                 >
                   Tham gia cộng đồng Dollar Media
-                  <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} />
+                  <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} sizes="24px" />
                 </GoldButton>
               </Link>
             </div>
@@ -275,7 +275,7 @@ const AboutAndResultsMobile = ({ thumbsSwiper, setThumbsSwiper, openRegistration
                   className="w-[310px] h-[50px] text-sm group"
                 >
                   Tham gia cộng đồng Dollar Media
-                  <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} />
+                  <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} sizes="24px" />
                 </GoldButton>
               </Link>
             </div>
