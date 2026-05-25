@@ -55,6 +55,7 @@ const YouAreCurrentlyDesktop = () => {
                             alt="background"
                             fill
                             className="object-cover opacity-20 -z-10 transition-all duration-700 scale-[1.4]"
+                            sizes="100vw"
                         />
                         <div className="flex items-center gap-2 mb-2">
                             <div className="bg-secondary rounded-full p-1 flex-shrink-0">
@@ -95,6 +96,7 @@ const YouAreCurrentlyMobile = () => {
                             alt="background"
                             fill
                             className="object-cover opacity-20 -z-10"
+                            sizes="100vw"
                         />
                         <div className="flex items-center gap-2 mb-2">
                             <div className="bg-secondary rounded-full p-1 flex-shrink-0">

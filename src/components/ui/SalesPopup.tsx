@@ -2,6 +2,7 @@
 
 import { mdiCheckDecagram, mdiClose } from "@mdi/js";
 import Icon from "@mdi/react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const MOCK_SALES = [
@@ -76,9 +77,11 @@ export function SalesPopup() {
         }`}
     >
       <div className="relative flex-shrink-0 mt-0.5">
-        <img
+        <Image
           src={`https://picsum.photos/100/100?random=${encodeURIComponent(currentSale.name)}`}
           alt={currentSale.name}
+          width={40}
+          height={40}
           className="w-10 h-10 rounded-full object-cover border border-neutral-800"
         />
         <div className="absolute -bottom-1 -right-1 bg-[#0a0a0a] rounded-full p-0.5 border border-neutral-800">
@@ -87,19 +90,20 @@ export function SalesPopup() {
       </div>
       <div className="flex-1 min-w-0">
         <div className="text-sm leading-snug">
-          <span className="font-semibold text-white">{currentSale.name}</span>
-          <span className="text-neutral-400 text-xs"> đã mua </span>
+          <span className="font-semibold text-neutral-200">{currentSale.name}</span>
+          <span className="text-neutral-500 text-xs"> đã mua </span>
         </div>
         <div className="text-xs font-semibold text-secondary mt-0.5 leading-tight">
           {currentSale.product}
         </div>
-        <div className="text-xs italic text-neutral-400 mt-1">
+        <div className="text-xs italic text-neutral-500 mt-1">
           {currentSale.time}
         </div>
       </div>
       <button
         onClick={() => setIsVisible(false)}
-        className="text-neutral-400 hover:text-white transition-colors flex-shrink-0"
+        className="text-neutral-400 hover:text-neutral-200 transition-colors flex-shrink-0"
+        aria-label="Đóng thông báo"
       >
         <Icon path={mdiClose} size={0.6} />
       </button>

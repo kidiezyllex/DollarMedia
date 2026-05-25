@@ -50,6 +50,7 @@ export const Hero = () => {
           className="w-full h-auto hidden sm:block"
           priority
           sizes="100vw"
+          fetchPriority="high"
         />
       </div>
       <div className="w-full z-0 block sm:hidden">
@@ -61,6 +62,7 @@ export const Hero = () => {
           className="w-full h-auto block"
           priority
           sizes="100vw"
+          fetchPriority="high"
         />
       </div>
 

@@ -44,14 +44,14 @@ export const Footer = () => {
           <div className="col-span-1 lg:col-span-2 space-y-2">
             <div className="flex gap-2 items-center">
               <div className="flex items-center gap-2">
-                <img draggable={false} src="/images/primary-logo.png" alt={SHOP_INFO.name} className="lg:h-20 lg:w-20 w-14 h-14 object-contain flex-shrink-0" />
+                <Image src="/images/primary-logo.png" alt={SHOP_INFO.name} width={80} height={80} className="lg:h-20 lg:w-20 w-14 h-14 object-contain flex-shrink-0" />
               </div>
               <Link href="https://zalo.me/g/ake1jadogzfsxu8ntdkd" target="_blank">
                 <GoldButton
                   className="w-[290px] lg:w-[310px] h-[50px] text-sm group"
                 >
                   Tham gia cộng đồng Dollar Media
-                  <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} />
+                  <Image src="/images/Zalo.png" alt="Zalo" width={24} height={24} sizes="24px" />
                 </GoldButton>
               </Link>
             </div>
@@ -61,7 +61,7 @@ export const Footer = () => {
           </div>
 
           <div className="lg:block hidden">
-            <h4 className="text-secondary font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Liên kết nhanh</h4>
+            <h3 className="text-secondary font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Liên kết nhanh</h3>
             <ul className="space-y-3 text-sm text-neutral-400">
               <li><Link href="#hero" className="hover:text-secondary hover:underline transition-colors text-base inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Trang Chủ</Link></li>
               <li><Link href="#demo" className="hover:text-secondary hover:underline transition-colors text-base inline-flex items-center gap-2"><Icon path={mdiChevronRight} size={0.6} /> Demo Thực Tế</Link></li>
@@ -73,7 +73,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-secondary font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Thông tin liên hệ</h4>
+            <h3 className="text-secondary font-bold mb-4 border-l-2 border-secondary pl-3 text-base">Thông tin liên hệ</h3>
             <ul className="space-y-4 text-sm text-neutral-400">
               <li className="flex items-center gap-2">
                 <div className="bg-secondary rounded-full p-1 flex-shrink-0">

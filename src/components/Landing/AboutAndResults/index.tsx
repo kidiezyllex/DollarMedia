@@ -62,6 +62,7 @@ const AboutAndResultsDesktop = ({ thumbsSwiper, setThumbsSwiper, openRegistratio
               height={1200}
               draggable={false}
               className="w-full h-auto object-contain rounded-2xl"
+              sizes="(max-width: 768px) 90vw, (max-width: 1200px) 40vw, 500px"
             />
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -134,16 +135,17 @@ const AboutAndResultsDesktop = ({ thumbsSwiper, setThumbsSwiper, openRegistratio
                         alt={`Slide ${idx + 1}`}
                         fill
                         className="object-contain"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 800px"
                       />
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
 
-              <button className="prev-btn absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-secondary rounded-full p-1 shadow-lg hover:scale-110 transition-all opacity-0 group-hover/swiper:opacity-100 disabled:opacity-0">
+              <button className="prev-btn absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-secondary rounded-full p-1 shadow-lg hover:scale-110 transition-all opacity-0 group-hover/swiper:opacity-100 disabled:opacity-0" aria-label="Slide trước">
                 <Icon path={mdiChevronLeft} size={1} className="text-black" />
               </button>
-              <button className="next-btn absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-secondary rounded-full p-1 shadow-lg hover:scale-110 transition-all opacity-0 group-hover/swiper:opacity-100 disabled:opacity-0">
+              <button className="next-btn absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-secondary rounded-full p-1 shadow-lg hover:scale-110 transition-all opacity-0 group-hover/swiper:opacity-100 disabled:opacity-0" aria-label="Slide tiếp theo">
                 <Icon path={mdiChevronRight} size={1} className="text-black" />
               </button>
 
@@ -165,6 +167,7 @@ const AboutAndResultsDesktop = ({ thumbsSwiper, setThumbsSwiper, openRegistratio
                         alt={`Thumb ${idx + 1}`}
                         fill
                         className="object-cover"
+                        sizes="100px"
                       />
                     </div>
                   </SwiperSlide>
@@ -179,7 +182,8 @@ const AboutAndResultsDesktop = ({ thumbsSwiper, setThumbsSwiper, openRegistratio
           src="/images/black-and-gold-luxury-background2.webp"
           alt="background"
           fill
-          className="object-fill w-full opacity-20 -z-10"
+          className="object-cover w-full opacity-20 -z-10"
+          sizes="100vw"
         />
         <PremiumHeader>
           GÓI SỬ DỤNG
@@ -203,7 +207,7 @@ const AboutAndResultsDesktop = ({ thumbsSwiper, setThumbsSwiper, openRegistratio
                   alt={`Package ${num}`}
                   width={800}
                   height={1200}
-                  className="w-full object-fill h-auto block transition-transform duration-700 border-2 border-accent/30 rounded-3xl"
+                  className="w-full aspect-[2/3] object-cover block transition-transform duration-700 border-2 border-accent/30 rounded-3xl"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
                 <div className="flex justify-center w-full">
@@ -239,6 +243,7 @@ const AboutAndResultsMobile = ({ thumbsSwiper, setThumbsSwiper, openRegistration
               height={1200}
               draggable={false}
               className="w-full h-auto object-contain rounded-2xl"
+              sizes="(max-width: 768px) 90vw, 500px"
             />
             <div>
               <p className="text-secondary text-lg font-semibold text-center">
@@ -299,6 +304,7 @@ const AboutAndResultsMobile = ({ thumbsSwiper, setThumbsSwiper, openRegistration
                         alt={`Slide ${idx + 1}`}
                         fill
                         className="object-contain"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 800px"
                       />
                     </div>
                   </SwiperSlide>
@@ -323,6 +329,7 @@ const AboutAndResultsMobile = ({ thumbsSwiper, setThumbsSwiper, openRegistration
                         alt={`Thumb ${idx + 1}`}
                         fill
                         className="object-cover"
+                        sizes="100px"
                       />
                     </div>
                   </SwiperSlide>
@@ -337,7 +344,8 @@ const AboutAndResultsMobile = ({ thumbsSwiper, setThumbsSwiper, openRegistration
           src="/images/black-and-gold-luxury-background2.webp"
           alt="background"
           fill
-          className="object-fill w-full opacity-20 -z-10"
+          className="object-cover w-full opacity-20 -z-10"
+          sizes="100vw"
         />
         <PremiumHeader>
           GÓI SỬ DỤNG
@@ -356,7 +364,7 @@ const AboutAndResultsMobile = ({ thumbsSwiper, setThumbsSwiper, openRegistration
                   alt={`Package ${num}`}
                   width={800}
                   height={1200}
-                  className="w-full object-fill h-auto block border-2 border-accent/30 rounded-3xl"
+                  className="w-full aspect-[2/3] object-cover block border-2 border-accent/30 rounded-3xl"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
                 <div className="flex justify-center w-full">
