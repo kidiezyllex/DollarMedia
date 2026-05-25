@@ -204,6 +204,7 @@ const AboutAndResultsDesktop = ({ thumbsSwiper, setThumbsSwiper, openRegistratio
                   width={800}
                   height={1200}
                   className="w-full object-fill h-auto block transition-transform duration-700 border-2 border-accent/30 rounded-3xl"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
                 <div className="flex justify-center w-full">
                   <GoldButton
@@ -356,6 +357,7 @@ const AboutAndResultsMobile = ({ thumbsSwiper, setThumbsSwiper, openRegistration
                   width={800}
                   height={1200}
                   className="w-full object-fill h-auto block border-2 border-accent/30 rounded-3xl"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
                 <div className="flex justify-center w-full">
                   <GoldButton

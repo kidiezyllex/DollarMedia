@@ -49,16 +49,18 @@ export const Hero = () => {
           height={1080}
           className="w-full h-auto hidden sm:block"
           priority
+          sizes="100vw"
         />
       </div>
       <div className="w-full z-0 block sm:hidden">
         <Image
           src="/images/hero-background-mobile.webp"
           alt="Background"
-          width={1920}
-          height={1080}
+          width={750}
+          height={1334}
           className="w-full h-auto block"
           priority
+          sizes="100vw"
         />
       </div>
 

@@ -99,12 +99,12 @@ export const RealDemo = () => {
                   muted
                   loop
                   playsInline
-                  autoPlay
+                  preload="metadata"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-black/60 backdrop-blur-md border-2 border-accent flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(203,155,81,0.5)]">
-                    <Icon path={mdiPlay} size={1.5} className="text-secondary" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-black/60 backdrop-blur-md border-2 border-accent flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_30px_rgba(203,155,81,0.5)] touch-manipulation">
+                    <Icon path={mdiPlay} size={1.2} className="text-secondary sm:text-[1.5rem]" />
                   </div>
                 </div>
               </div>

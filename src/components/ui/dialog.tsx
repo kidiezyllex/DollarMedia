@@ -74,6 +74,7 @@ const DialogContent = React.forwardRef<
         alt="background pattern"
         fill
         className="object-cover opacity-50 -z-10 pointer-events-none mix-blend-soft-light"
+        sizes="100vw"
       />
 
       {/* Border flares */}

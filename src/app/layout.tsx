@@ -1,12 +1,34 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from 'next';
-import { Lexend } from "next/font/google";
+import { Lexend, Open_Sans, Orbitron, Cinzel } from "next/font/google";
 import './globals.css';
 
 const lexend = Lexend({
   subsets: ["latin", "vietnamese"],
   variable: "--font-lexend",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-opensans-google",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron-google",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -128,8 +150,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="vi" className={cn("dark scroll-smooth", lexend.variable)}>
+    <html lang="vi" className={cn("dark scroll-smooth", lexend.variable, openSans.variable, orbitron.variable, cinzel.variable)}>
       <head>
+        {/* Preconnect to external domains for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="preconnect" href="https://connect.facebook.net" />
+        <link rel="preconnect" href="https://www.facebook.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
@@ -138,8 +166,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
         />
-        {/* Facebook Pixel */}
+        {/* Facebook Pixel - Load asynchronously */}
         <script
+          async
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)

@@ -69,6 +69,7 @@ const CTADesktop = ({
               draggable={false}
               priority
               className="w-full h-auto block"
+              sizes="100vw"
             />
           </div>
 

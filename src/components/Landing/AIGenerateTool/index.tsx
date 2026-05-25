@@ -75,6 +75,7 @@ const AIGenerateToolDesktop = () => {
                                     height={600}
                                     draggable={false}
                                     className="w-full h-auto object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </motion.div>
                         </div>
@@ -132,6 +133,7 @@ const AIGenerateToolMobile = () => {
                                     height={600}
                                     draggable={false}
                                     className="w-full h-auto object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </div>
                         </div>
