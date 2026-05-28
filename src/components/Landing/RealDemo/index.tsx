@@ -17,13 +17,13 @@ const demoItems = [
     id: "01",
     title: "DẠNG 1: VIDEO TỪ LINK YOUTUBE SANG VIDEO MỚI CHỈ 5P",
     description: "Chuyển đổi video từ link YouTube sang nội dung mới độc đáo, tối ưu chỉ trong 5 phút.",
-    video: "https://res.cloudinary.com/dypkxr0zr/video/upload/v1778727850/Ch%E1%BB%A9c_n%C4%83ng_l%C3%A0m_video_t%E1%BB%AB_link_YOUTUBE_vfmo9n.mp4"
+    video: "https://6b1c8wz28p.ufs.sh/f/j96j2uSUbsVoNq5sHWPzOlUG1oaicmhKEf7V6vC0ZFRAq8e9"
   },
   {
     id: "02",
     title: "DẠNG 2: KỊCH BẢN Ý TƯỞNG CÓ SẴN SANG VIDEO KHÔNG CẦN EDIT, KHÔNG CẦN CONTENT CREATOR",
     description: "Chỉ cần kịch bản hoặc ý tưởng – AI tự động tạo video hoàn chỉnh mà không cần kỹ năng dựng.",
-    video: "https://res.cloudinary.com/dypkxr0zr/video/upload/v1778727883/Ch%E1%BB%A9c_n%C4%83ng_l%C3%A0m_video_t%E1%BB%B1_nh%E1%BA%ADp_k2yowt.mp4"
+    video: "https://6b1c8wz28p.ufs.sh/f/j96j2uSUbsVokrPLODwqrAY1UPO6vSw8kjqfZQLIdRb9xGg0"
   },
   {
     id: "03",
