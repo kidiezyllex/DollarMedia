@@ -23,7 +23,7 @@ const demoItems = [
     id: "02",
     title: "DẠNG 2: KỊCH BẢN Ý TƯỞNG CÓ SẴN SANG VIDEO KHÔNG CẦN EDIT, KHÔNG CẦN CONTENT CREATOR",
     description: "Chỉ cần kịch bản hoặc ý tưởng – AI tự động tạo video hoàn chỉnh mà không cần kỹ năng dựng.",
-    video: "https://6b1c8wz28p.ufs.sh/f/j96j2uSUbsVokrPLODwqrAY1UPO6vSw8kjqfZQLIdRb9xGg0"
+    video: "https://6b1c8wz28p.ufs.sh/f/j96j2uSUbsVoP4dTXn5sFVIQqDW5Ox2S7YRrHyZ6gafbnJBl"
   },
   {
     id: "03",
