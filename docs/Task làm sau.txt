@@ -1,3 +1,0 @@
-- Viết SEO, meta cho trang web
-- Chuyển logo sang .eco (favicon)
-- Suy nghĩ nav header cho trang

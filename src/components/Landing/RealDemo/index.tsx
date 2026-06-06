@@ -29,13 +29,13 @@ const demoItems = [
     id: "03",
     title: "DẠNG 3: VIDEO TỪ TRUYỆN TRANH, TRUYỆN CHỮ CỰC ĐƠN GIẢN",
     description: "Biến truyện tranh, truyện chữ thành video hấp dẫn, chuẩn xu hướng triệu views cực kỳ đơn giản.",
-    video: "https://res.cloudinary.com/dypkxr0zr/video/upload/v1778727530/Ch%E1%BB%A9c_n%C4%83ng_l%C3%A0m_video_t%E1%BB%AB_truy%E1%BB%87n_k8kxkb.mp4"
+    video: "https://6b1c8wz28p.ufs.sh/f/j96j2uSUbsVoc4WFNXyvqF3CsSp2TuZKAgVU5fE6mbe0jIoL"
   },
   {
     id: "04",
     title: "DẠNG 4: LÀM VIDEO AI TỪ BÀI BÁO MỚI NHẤT",
     description: "Tạo video chuyên nghiệp từ các bài báo mới nhất một cách dễ dàng, nhanh chóng và hiệu quả.",
-    video: "https://res.cloudinary.com/dypkxr0zr/video/upload/v1778727716/Ch%E1%BB%A9c_n%C4%83ng_l%C3%A0m_video_t%E1%BB%AB_B%C3%A1o_btmu2w.mp4"
+    video: "https://6b1c8wz28p.ufs.sh/f/j96j2uSUbsVoA0XT7AUNnYlSHmp61CKogDM9Efs4IyQPZwiL"
   },
 ];
 
