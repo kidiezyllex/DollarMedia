@@ -36,9 +36,9 @@ import 'swiper/css/thumbs';
 const slideImages = Array.from({ length: 14 }, (_, i) => `/images/slides/slide${i + 1}.webp`);
 
 const packageNames: Record<number, string> = {
-  1: "Tool tạo video AI - Gói trải nghiệm 1 tháng 899.000 VNĐ",
-  2: "Tool tạo video AI - Gói kiếm tiền 3 tháng 2.290.000 VNĐ",
-  3: "Tool tạo video AI - Gói đồng hành 6 tháng 4.590.000 VNĐ",
+  1: "Tool tạo video AI - Gói trải nghiệm 1 tháng 971.000 VNĐ",
+  2: "Tool tạo video AI - Gói học tập 3 tháng 2.477.000 VNĐ",
+  3: "Tool tạo video AI - Gói đồng hành 6 tháng 4.878.000 VNĐ",
 };
 
 interface SharedProps {
@@ -203,7 +203,7 @@ const AboutAndResultsDesktop = ({ thumbsSwiper, setThumbsSwiper, openRegistratio
             >
               <div className="relative w-full h-auto space-y-4">
                 <Image
-                  src={`/images/packages/package${num}.webp`}
+                  src={`/images/packages/package${num}.jpg`}
                   alt={`Package ${num}`}
                   width={800}
                   height={1200}
@@ -360,7 +360,7 @@ const AboutAndResultsMobile = ({ thumbsSwiper, setThumbsSwiper, openRegistration
             >
               <div className="relative w-full h-auto space-y-4">
                 <Image
-                  src={`/images/packages/package${num}.webp`}
+                  src={`/images/packages/package${num}.jpg`}
                   alt={`Package ${num}`}
                   width={800}
                   height={1200}
