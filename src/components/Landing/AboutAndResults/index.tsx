@@ -37,8 +37,8 @@ const slideImages = Array.from({ length: 14 }, (_, i) => `/images/slides/slide${
 
 const packageNames: Record<number, string> = {
   1: "Tool tạo video AI - Gói trải nghiệm 1 tháng 971.000 VNĐ",
-  2: "Tool tạo video AI - Gói học tập 3 tháng 2.477.000 VNĐ",
-  3: "Tool tạo video AI - Gói đồng hành 6 tháng 4.878.000 VNĐ",
+  2: "Tool tạo video AI - Gói đồng hành 6 tháng 4.878.000 VNĐ",
+  3: "Tool tạo video AI - Gói học tập 3 tháng 2.477.000 VNĐ",
 };
 
 interface SharedProps {
